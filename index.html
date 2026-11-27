@@ -5,522 +5,3133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Hương sắc Việt Nam 2027 – cuộc thi sáng tạo hình ảnh và video trên nền tảng Nocal."
+      content="Hương sắc Việt Nam 2027 (The Colors of Vietnam) – Cuộc thi sáng tạo hình ảnh và video toàn quốc do Công ty CP KHCN Nocal tổ chức. Mỗi góc nhìn – Một câu chuyện Việt Nam."
     />
     <meta name="theme-color" content="#96282E" />
-    <title>Hương sắc Việt Nam 2027</title>
+    <title>Hương sắc Việt Nam 2027 — The Colors of Vietnam</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "do-son": "#96282E",
+              "do-tram": "#6F1B20",
+              "vang-di-san": "#C6A15B",
+              "kem-giay-do": "#F6F0E5",
+              "kem-tram": "#EDE4D3",
+              "xanh-ban-dia": "#26483C",
+              "xanh-sau": "#1B342B",
+              "nau-than": "#332E29",
+              "nau-nhat": "#5D554D",
+            },
+            fontFamily: {
+              serif: ['"Noto Serif"', '"Playfair Display"', "Georgia", "serif"],
+              sans: ['"Be Vietnam Pro"', "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header class="site-header" id="top">
-      <a class="brand" href="#top" aria-label="Hương sắc Việt Nam">
-        <span class="brand-mark">HS</span
-        ><span>Hương sắc<br /><b>Việt Nam</b></span>
-      </a>
-      <nav class="nav" aria-label="Điều hướng chính">
-        <a href="#story">Câu chuyện</a><a href="#categories">Cuộc thi</a
-        ><a href="#themes">Chủ đề</a><a href="#gallery">Tác phẩm</a
-        ><a href="#journey">Hành trình</a>
-      </nav>
-      <div class="header-actions">
-        <span class="nocal">nocal</span
-        ><a class="button button-small" href="#join"
-          >Tham gia dự thi <span>↗</span></a
+  <body
+    class="bg-kem-giay-do text-nau-than font-sans antialiased overflow-x-hidden"
+    data-active-quarter="Q1"
+    data-map-phase="teaser"
+  >
+    <a class="skip-link" href="#section-02">Chuyển tới nội dung chính</a>
+
+    <!-- 01. HEADER (STICKY + DROPDOWNS) -->
+    <header id="section-01" class="site-header fixed inset-x-0 top-0 z-50">
+      <div class="hs-container h-full flex items-center justify-between gap-4">
+        <!-- Trái: Logo cuộc thi + Logo Nocal -->
+        <div class="flex items-center gap-3 shrink-0">
+          <a
+            class="flex items-center gap-2.5 text-current no-underline"
+            href="#section-02"
+            aria-label="Hương sắc Việt Nam 2027 – Trang chủ"
+          >
+            <span
+              class="brand-seal w-10 h-10 grid place-items-center"
+              aria-hidden="true"
+            >
+              <svg viewBox="0 0 44 44" fill="none" class="w-10 h-10">
+                <circle
+                  cx="22"
+                  cy="22"
+                  r="20.5"
+                  stroke="currentColor"
+                  stroke-width="1"
+                />
+                <circle
+                  cx="22"
+                  cy="22"
+                  r="16.5"
+                  stroke="currentColor"
+                  stroke-width="0.6"
+                  stroke-dasharray="2 2"
+                />
+                <path
+                  d="M22 10C18.5 15.2 18.5 22.8 22 28C25.5 22.8 25.5 15.2 22 10Z"
+                  stroke="currentColor"
+                  stroke-width="1.1"
+                />
+                <path
+                  d="M12.5 19C16.5 19 20 22.5 22 28C16.5 26.8 13.4 23.2 12.5 19Z"
+                  stroke="currentColor"
+                  stroke-width="1.1"
+                />
+                <path
+                  d="M31.5 19C27.5 19 24 22.5 22 28C27.5 26.8 30.6 23.2 31.5 19Z"
+                  stroke="currentColor"
+                  stroke-width="1.1"
+                />
+                <path d="M16 32.5H28" stroke="currentColor" stroke-width="1" />
+              </svg>
+            </span>
+            <span class="flex flex-col leading-tight">
+              <small class="text-[10px] tracking-[0.16em] uppercase opacity-80"
+                >2027</small
+              >
+              <span class="font-serif text-[15px]"
+                >Hương sắc <b>Việt Nam</b></span
+              >
+            </span>
+          </a>
+
+          <span
+            class="h-6 w-px bg-current opacity-25 hidden sm:inline-block"
+            aria-hidden="true"
+          ></span>
+
+          <a
+            href="#section-16"
+            class="nocal-header-logo hidden sm:inline-flex items-center gap-1.5 px-2 py-1 rounded border border-current/25 text-xs font-semibold"
+            aria-label="Đơn vị tổ chức Nocal"
+          >
+            <img
+              src="nocal.png"
+              alt="Logo Nocal"
+              width="24"
+              height="24"
+              class="w-6 h-6 object-contain rounded-[3px]"
+            />
+            <span>Nocal</span>
+          </a>
+        </div>
+
+        <!-- Giữa: 7 mục Menu (có 2 Dropdown chuẩn thanham.vn) -->
+        <nav
+          class="primary-nav hidden xl:flex items-center gap-5"
+          id="primary-nav"
+          aria-label="Điều hướng chính"
         >
+          <a class="nav-item" href="#section-02">Trang chủ</a>
+          <a class="nav-item" href="#section-04">Giới thiệu</a>
+
+          <div class="nav-dropdown relative">
+            <button
+              type="button"
+              class="nav-item nav-dropdown-trigger inline-flex items-center gap-1"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              Cuộc thi
+              <span class="text-xs opacity-75" aria-hidden="true">▾</span>
+            </button>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="#section-05" role="menuitem">Hương sắc qua ảnh</a>
+              <a href="#section-06" role="menuitem">Hương sắc qua video</a>
+              <a href="#section-07" role="menuitem">Chủ đề dự thi</a>
+            </div>
+          </div>
+
+          <a class="nav-item" href="#section-12">Bản đồ Hương sắc</a>
+
+          <div class="nav-dropdown relative">
+            <button
+              type="button"
+              class="nav-item nav-dropdown-trigger inline-flex items-center gap-1"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              Thông tin cuộc thi
+              <span class="text-xs opacity-75" aria-hidden="true">▾</span>
+            </button>
+            <div class="nav-dropdown-menu" role="menu">
+              <button
+                type="button"
+                role="menuitem"
+                data-open-modal="rules-modal"
+              >
+                Quy chế cuộc thi
+              </button>
+              <button
+                type="button"
+                role="menuitem"
+                data-open-modal="rules-modal"
+              >
+                Thể lệ chi tiết
+              </button>
+              <a href="#section-09" role="menuitem">Giải thưởng (70 triệu)</a>
+              <a href="#section-10" role="menuitem">Hướng dẫn tham gia</a>
+            </div>
+          </div>
+
+          <a class="nav-item" href="#section-15">Tin tức &amp; Sự kiện</a>
+          <a class="nav-item" href="#section-17">Liên hệ</a>
+        </nav>
+
+        <!-- Phải: CTA Đỏ son + Hamburger Mobile -->
+        <div class="flex items-center gap-3 shrink-0">
+          <a
+            href="#section-10"
+            class="btn-primary btn-sm hidden sm:inline-flex"
+          >
+            THAM GIA DỰ THI
+          </a>
+          <button
+            id="menu-toggle"
+            class="menu-toggle xl:hidden flex flex-col justify-between w-11 h-11 p-2.5 border border-current rounded"
+            type="button"
+            aria-label="Mở menu điều hướng"
+            aria-expanded="false"
+            aria-controls="mobile-drawer"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
-      <button class="menu-toggle" aria-label="Mở menu" aria-expanded="false">
-        ☰
-      </button>
+
+      <!-- Mobile Drawer -->
+      <div id="mobile-drawer" class="mobile-drawer xl:hidden" hidden>
+        <div class="hs-container py-5 flex flex-col gap-2 text-nau-than">
+          <a href="#section-02" class="mobile-link">Trang chủ</a>
+          <a href="#section-04" class="mobile-link">Giới thiệu</a>
+          <div class="mobile-group">
+            <span class="mobile-group-label">Cuộc thi</span>
+            <a href="#section-05" class="mobile-sublink">Hương sắc qua ảnh</a>
+            <a href="#section-06" class="mobile-sublink">Hương sắc qua video</a>
+            <a href="#section-07" class="mobile-sublink">Chủ đề dự thi</a>
+          </div>
+          <a href="#section-12" class="mobile-link">Bản đồ Hương sắc</a>
+          <div class="mobile-group">
+            <span class="mobile-group-label">Thông tin cuộc thi</span>
+            <button
+              type="button"
+              class="mobile-sublink text-left"
+              data-open-modal="rules-modal"
+            >
+              Quy chế &amp; Thể lệ
+            </button>
+            <a href="#section-09" class="mobile-sublink">Giải thưởng</a>
+            <a href="#section-10" class="mobile-sublink">Hướng dẫn tham gia</a>
+          </div>
+          <a href="#section-15" class="mobile-link">Tin tức &amp; Sự kiện</a>
+          <a href="#section-17" class="mobile-link">Liên hệ</a>
+          <a href="#section-10" class="btn-primary w-full mt-2 justify-center"
+            >THAM GIA DỰ THI ↗</a
+          >
+        </div>
+      </div>
     </header>
 
     <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <img
-          class="hero-image"
-          src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=2200&q=88"
-          alt="Ruộng bậc thang trong sương sớm tại Việt Nam"
-          fetchpriority="high"
-        />
-        <div class="hero-shade"></div>
-        <div class="grain"></div>
-        <div class="hero-content container">
-          <p class="eyebrow light">
-            Cuộc thi sáng tạo hình ảnh &amp; video · 2027
-          </p>
-          <h1 id="hero-title">Hương sắc<br /><em>Việt Nam</em></h1>
-          <p class="hero-slogan">Mỗi góc nhìn – Một câu chuyện Việt Nam.</p>
-          <p class="hero-copy">
-            Ghi lại vẻ đẹp quê hương, kể những câu chuyện về con người, văn hóa
-            và những giá trị Việt Nam qua từng bức ảnh, từng thước phim.
-          </p>
-          <div class="hero-buttons">
-            <a href="#join" class="button">Tham gia dự thi <span>↗</span></a
-            ><a href="#intro" class="button button-ghost"
-              >Khám phá cuộc thi <span>↓</span></a
-            >
-          </div>
-          <div class="hero-meta">
-            <span>01 — 12 / 2027</span><i></i><span>Toàn quốc</span><i></i
-            ><span>Trên nền tảng Nocal</span>
-          </div>
-        </div>
-        <a href="#story" class="scroll-note"><span></span>Cuộn để khám phá</a>
-      </section>
-
-      <section id="story" class="story section container reveal">
-        <div class="section-number">01 / CÂU CHUYỆN</div>
-        <div class="story-grid">
-          <div class="story-visual">
-            <img
-              src="https://images.unsplash.com/photo-1557750255-c76072a7aad1?auto=format&fit=crop&w=1200&q=85"
-              alt="Người phụ nữ Việt Nam đội nón lá"
-              loading="lazy"
-            />
-            <div class="stamp">VIỆT<br />NAM<br />2027</div>
-          </div>
-          <div class="story-content">
-            <p class="eyebrow">Một triển lãm số của cộng đồng</p>
-            <h2>Những vẻ đẹp bình dị<br />làm nên <em>Việt Nam.</em></h2>
-            <p>
-              Việt Nam hiện diện trong những mùa lúa chín, những phiên chợ sớm,
-              trong nếp nhà, làng nghề và bàn tay của những người gìn giữ giá
-              trị truyền thống.
-            </p>
-            <p>
-              Hương sắc Việt Nam là lời mời để mỗi người ghi lại những câu
-              chuyện ấy bằng góc nhìn chân thực và sáng tạo của riêng mình.
-            </p>
-            <a href="#intro" class="text-link"
-              >Đọc câu chuyện của chúng tôi <span>→</span></a
-            >
-          </div>
-        </div>
-      </section>
-
-      <section id="intro" class="intro section">
-        <div class="container intro-grid reveal">
-          <div>
-            <p class="eyebrow">Về cuộc thi</p>
-            <h2>Ghi lại điều bạn yêu.<br /><em>Kể câu chuyện của bạn.</em></h2>
-          </div>
-          <div class="intro-right">
-            <p>
-              Hương sắc Việt Nam là cuộc thi sáng tạo hình ảnh và video trên nền
-              tảng Nocal, hướng đến việc giới thiệu những giá trị văn hóa, cảnh
-              quan, đời sống, sản vật, làng nghề và thương hiệu Việt qua tác
-              phẩm do cộng đồng thực hiện.
-            </p>
-            <div class="value-list">
-              <div>
-                <b>01</b>
-                <h3>Ghi lại</h3>
-                <span>Những khoảnh khắc mang dấu ấn quê hương.</span>
-              </div>
-              <div>
-                <b>02</b>
-                <h3>Kể chuyện</h3>
-                <span>Bằng hình ảnh, chuyển động và cảm xúc riêng.</span>
-              </div>
-              <div>
-                <b>03</b>
-                <h3>Lan tỏa</h3>
-                <span>Đến cộng đồng yêu những giá trị Việt.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="categories" class="categories section container">
-        <div class="heading-row reveal">
-          <div>
-            <p class="eyebrow">Hai hạng mục dự thi</p>
-            <h2>Nơi khoảnh khắc<br />gặp gỡ <em>câu chuyện.</em></h2>
-          </div>
-          <p>Chọn ngôn ngữ phù hợp nhất để kể về một Việt Nam trong bạn.</p>
-        </div>
-        <div class="category-grid">
-          <article class="category-card photo-card reveal">
-            <img
-              src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80"
-              alt="Cảnh quan vùng núi Việt Nam"
-              loading="lazy"
-            />
-            <div class="card-overlay">
-              <p>HẠNG MỤC 01</p>
-              <h3>Hương sắc<br />qua ảnh</h3>
-              <span>Một khoảnh khắc – Một câu chuyện</span
-              ><a href="#join">Gửi ảnh dự thi <b>↗</b></a>
-            </div>
-          </article>
-          <article class="category-card video-card reveal">
-            <img
-              src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80"
-              alt="Không gian phố cổ Hội An"
-              loading="lazy"
-            />
-            <div class="card-overlay">
-              <p>HẠNG MỤC 02</p>
-              <h3>Hương sắc<br />qua video</h3>
-              <span>Mỗi thước phim – Một dấu ấn Việt</span
-              ><button class="play" aria-label="Xem video giới thiệu">▶</button
-              ><a href="#join">Gửi video dự thi <b>↗</b></a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="themes" class="themes section">
-        <div class="container">
-          <div class="heading-row reveal">
-            <div>
-              <p class="eyebrow">06 chủ đề sáng tạo</p>
-              <h2>Việt Nam qua<br /><em>sáu lát cắt.</em></h2>
-            </div>
-            <a href="#join" class="text-link">Khám phá chủ đề <span>→</span></a>
-          </div>
-          <div class="theme-grid">
-            <article>
-              <img
-                src="https://images.unsplash.com/photo-1583417267826-aebc4d1542e1?auto=format&fit=crop&w=900&q=80"
-                alt="Núi và ruộng bậc thang"
-                loading="lazy"
-              /><span>01</span>
-              <h3>Non nước Việt Nam</h3>
-              <p>Thiên nhiên, danh lam thắng cảnh và du lịch.</p>
-            </article>
-            <article>
-              <img
-                src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80"
-                alt="Đèn lồng trong phố cổ"
-                loading="lazy"
-              /><span>02</span>
-              <h3>Bản sắc Việt</h3>
-              <p>Di sản, lễ hội, phong tục và truyền thống.</p>
-            </article>
-            <article>
-              <img
-                src="https://images.unsplash.com/photo-1557750255-c76072a7aad1?auto=format&fit=crop&w=900&q=80"
-                alt="Người phụ nữ Việt Nam trong chợ"
-                loading="lazy"
-              /><span>03</span>
-              <h3>Con người Việt Nam</h3>
-              <p>Chân dung, lao động và đời sống.</p>
-            </article>
-            <article>
-              <img
-                src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=900&q=80"
-                alt="Ẩm thực Việt Nam"
-                loading="lazy"
-              /><span>04</span>
-              <h3>Hương vị quê hương</h3>
-              <p>Ẩm thực, đặc sản và sản vật.</p>
-            </article>
-            <article>
-              <img
-                src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80"
-                alt="Nghề thủ công truyền thống"
-                loading="lazy"
-              /><span>05</span>
-              <h3>Tinh hoa làng nghề</h3>
-              <p>Nghệ nhân và nghề truyền thống.</p>
-            </article>
-            <article>
-              <img
-                src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=80"
-                alt="Nhóm người cùng làm việc"
-                loading="lazy"
-              /><span>06</span>
-              <h3>Tự hào thương hiệu Việt</h3>
-              <p>Sản phẩm, doanh nghiệp và khởi nghiệp.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="gallery" class="gallery section container">
-        <div class="heading-row reveal">
-          <div>
-            <p class="eyebrow">Tác phẩm nổi bật</p>
-            <h2>Những góc nhìn<br /><em>Việt Nam.</em></h2>
-          </div>
-          <p class="demo-note">
-            Dữ liệu minh họa · chờ đồng bộ tác phẩm đã duyệt từ Nocal
-          </p>
-        </div>
-        <div class="masonry reveal">
-          <figure class="tall">
-            <img
-              src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80"
-              alt="Tác phẩm minh họa về đời sống"
-              loading="lazy"
-            />
-            <figcaption>
-              <b>Nhịp sống miền sông nước</b
-              ><span>Minh họa · Con người Việt Nam</span>
-            </figcaption>
-          </figure>
-          <figure>
-            <img
-              src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=900&q=80"
-              alt="Tác phẩm minh họa về làng quê"
-              loading="lazy"
-            />
-            <figcaption>
-              <b>Mùa gặt</b><span>Minh họa · Non nước Việt Nam</span>
-            </figcaption>
-          </figure>
-          <figure>
-            <img
-              src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=80"
-              alt="Tác phẩm minh họa cảnh núi"
-              loading="lazy"
-            />
-            <figcaption>
-              <b>Nếp núi</b><span>Minh họa · Bản sắc Việt</span>
-            </figcaption>
-          </figure>
-          <figure class="wide">
-            <img
-              src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80"
-              alt="Tác phẩm minh họa cảnh quan Việt Nam"
-              loading="lazy"
-            />
-            <figcaption>
-              <b>Đất trời vào vụ mới</b
-              ><span>Minh họa · Non nước Việt Nam</span>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="center">
-          <a href="#join" class="button button-outline"
-            >Khám phá tác phẩm <span>→</span></a
-          >
-        </div>
-      </section>
-
-      <section class="awards section">
-        <div class="awards-inner container reveal">
-          <p class="eyebrow gold">Giải thưởng</p>
-          <h2>Vinh danh những<br /><em>câu chuyện Việt Nam.</em></h2>
-          <div class="award-total">
-            <span>Tổng giá trị giải thưởng dự kiến</span
-            ><strong>70.000.000 <small>VNĐ</small></strong>
-            <p>Cơ cấu chi tiết đang chờ Ban Tổ chức xác nhận.</p>
-          </div>
-          <div class="award-types">
-            <span>Giải Nhất</span><span>Giải Nhì</span><span>Giải Ba</span
-            ><span>Khuyến khích</span><span>Được yêu thích</span
-            ><span>Chuyên đề</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="join" class="join section container">
-        <div class="join-head reveal">
-          <p class="eyebrow">Hướng dẫn tham gia</p>
-          <h2>
-            Bốn bước để câu chuyện Việt<br />của bạn được <em>lan tỏa.</em>
-          </h2>
-        </div>
-        <ol class="steps reveal">
-          <li>
-            <b>01</b>
-            <h3>Vào Nocal</h3>
-            <p>Đăng ký hoặc đăng nhập tài khoản Nocal.</p>
-          </li>
-          <li>
-            <b>02</b>
-            <h3>Sáng tạo</h3>
-            <p>Chọn chủ đề và thực hiện tác phẩm của bạn.</p>
-          </li>
-          <li>
-            <b>03</b>
-            <h3>Gửi tác phẩm</h3>
-            <p>Đăng tải và gửi theo hướng dẫn dự thi.</p>
-          </li>
-          <li>
-            <b>04</b>
-            <h3>Lan tỏa</h3>
-            <p>Chia sẻ để cộng đồng cùng khám phá.</p>
-          </li>
-        </ol>
-        <div class="center">
-          <a class="button" href="#top">Tham gia ngay <span>↗</span></a>
-        </div>
-      </section>
-
-      <section id="journey" class="journey section">
-        <div class="container">
-          <div class="heading-row reveal">
-            <div>
-              <p class="eyebrow">Hành trình 2027</p>
-              <h2>Bốn mùa, một<br /><em>hành trình Việt.</em></h2>
-            </div>
-            <p>
-              Những chủ đề được mở ra theo nhịp điệu của một năm đầy màu sắc.
-            </p>
-          </div>
-          <div class="timeline reveal">
-            <article>
-              <span>01 — 03 / 2027</span><i></i>
-              <h3>Sắc xuân Việt Nam</h3>
-              <p>Tết, lễ hội, phong tục, cảnh sắc và hương vị quê hương.</p>
-            </article>
-            <article>
-              <span>04 — 06 / 2027</span><i></i>
-              <h3>Tinh hoa đất Việt</h3>
-              <p>Làng nghề, sản phẩm, văn hóa, ẩm thực và OCOP.</p>
-            </article>
-            <article>
-              <span>07 — 09 / 2027</span><i></i>
-              <h3>Việt Nam trong tôi</h3>
-              <p>Con người, đời sống, trải nghiệm, ký ức và cộng đồng.</p>
-            </article>
-            <article>
-              <span>10 — 12 / 2027</span><i></i>
-              <h3>Việt Nam vươn mình</h3>
-              <p>Đổi mới, khởi nghiệp, công nghệ và phát triển bền vững.</p>
-            </article>
-          </div>
-          <p class="finale">
-            Chung kết năm — Vinh danh những câu chuyện Việt Nam tiêu biểu
-          </p>
-        </div>
-      </section>
-
-      <section class="map-section section container">
-        <div class="map-copy reveal">
-          <p class="eyebrow">Bản đồ Hương sắc</p>
-          <h2>
-            Khám phá Việt Nam<br />qua những câu chuyện từ<br /><em
-              >mọi miền đất nước.</em
-            >
-          </h2>
-          <p>
-            Không gian bản đồ đang được hoàn thiện để kết nối những tác phẩm đã
-            được xác thực theo từng địa phương.
-          </p>
-          <button class="button button-outline" disabled>
-            Khám phá bản đồ <span>↗</span>
-          </button>
-        </div>
+      <!-- 02. HERO BANNER (TOÀN MÀN HÌNH + KEY VISUAL THEO QUÝ) -->
+      <section
+        id="section-02"
+        class="hero relative min-h-[100svh] lg:min-h-[900px] flex items-center text-white overflow-hidden pt-28 pb-16"
+        aria-labelledby="hero-title"
+        data-cms-quarter="Q1"
+      >
+        <picture class="hero-media absolute inset-0 w-full h-full">
+          <source
+            media="(max-width: 640px)"
+            srcset="
+              https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1080&h=1920&q=86
+            "
+          />
+          <img
+            class="hero-image w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1920&h=900&q=88"
+            alt="Cảnh quan núi non và ruộng bậc thang Việt Nam trong sương sớm"
+            fetchpriority="high"
+          />
+        </picture>
+        <div class="hero-shade absolute inset-0" aria-hidden="true"></div>
         <div
-          class="map-placeholder reveal"
-          aria-label="Bản đồ Việt Nam đang chờ dữ liệu"
+          class="grain absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+        ></div>
+
+        <div class="hs-container relative z-10">
+          <div class="flex flex-wrap items-center gap-3 mb-5">
+            <span
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-vang-di-san/20 border border-vang-di-san/70 text-[#F6E7C7] text-xs font-semibold tracking-wide"
+              data-quarter-badge
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-vang-di-san shadow-[0_0_0_4px_rgba(198,161,91,0.3)]"
+                aria-hidden="true"
+              ></span>
+              Quý I · Sắc xuân Việt Nam · Đang mở cổng
+            </span>
+            <span class="text-xs uppercase tracking-[0.2em] text-white/80">
+              The Colors of Vietnam
+            </span>
+          </div>
+
+          <p
+            class="text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-vang-di-san mb-3"
+          >
+            CUỘC THI SÁNG TẠO HÌNH ẢNH VÀ VIDEO
+          </p>
+
+          <h1
+            id="hero-title"
+            class="hero-h1 font-serif font-semibold tracking-tight mb-4"
+          >
+            HƯƠNG SẮC<br /><em class="text-vang-di-san italic font-medium"
+              >VIỆT NAM</em
+            >
+            2027
+          </h1>
+
+          <p
+            class="font-serif italic text-xl sm:text-2xl lg:text-3xl text-[#F5EBD8] mb-4"
+          >
+            “Mỗi góc nhìn – Một câu chuyện Việt Nam”
+          </p>
+
+          <p
+            class="max-w-xl text-white/90 text-[15px] sm:text-base lg:text-[17px] leading-relaxed mb-7"
+          >
+            Sân chơi sáng tạo toàn quốc trên nền tảng Nocal — tôn vinh cảnh sắc
+            quê hương, bản sắc di sản, con người, ẩm thực, làng nghề và thương
+            hiệu Việt qua từng khung hình chân thực.
+          </p>
+
+          <div class="flex flex-wrap gap-3.5 mb-10">
+            <a href="#section-10" class="btn-primary">
+              THAM GIA DỰ THI <span aria-hidden="true">↗</span>
+            </a>
+            <a href="#section-04" class="btn-ghost">
+              KHÁM PHÁ CUỘC THI <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <dl
+            class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-10 pt-6 border-t border-white/25 max-w-3xl"
+          >
+            <div>
+              <dt
+                class="text-[11px] uppercase tracking-[0.14em] text-white/70 mb-1"
+              >
+                Thời gian
+              </dt>
+              <dd class="text-[15px] font-semibold">
+                01–12/2027 (4 Quý + 1 Chung kết)
+              </dd>
+            </div>
+            <div>
+              <dt
+                class="text-[11px] uppercase tracking-[0.14em] text-white/70 mb-1"
+              >
+                Tổng giải thưởng
+              </dt>
+              <dd class="text-[15px] font-semibold text-vang-di-san">
+                70.000.000 VNĐ
+              </dd>
+            </div>
+            <div>
+              <dt
+                class="text-[11px] uppercase tracking-[0.14em] text-white/70 mb-1"
+              >
+                Phạm vi &amp; Nền tảng
+              </dt>
+              <dd class="text-[15px] font-semibold">
+                Toàn quốc · Nocal Social
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <a
+          href="#section-03"
+          class="scroll-note hidden md:flex"
+          aria-label="Cuộn xuống câu chuyện Hương sắc Việt Nam"
         >
-          <div class="map-outline">VIỆT<br />NAM</div>
-          <span class="pin p1"></span><span class="pin p2"></span
-          ><span class="pin p3"></span
-          ><small>Dữ liệu địa phương đang cập nhật</small>
+          <span></span>Cuộn khám phá
+        </a>
+      </section>
+
+      <!-- 03. CÂU CHUYỆN HƯƠNG SẮC VIỆT NAM -->
+      <section id="section-03" class="section-pad bg-kem-giay-do">
+        <div class="hs-container">
+          <div
+            class="text-[11px] font-bold tracking-[0.16em] uppercase text-do-son pb-3.5 mb-9 border-b border-nau-than/15 reveal"
+          >
+            Câu chuyện Hương sắc Việt Nam
+          </div>
+
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start"
+          >
+            <figure class="lg:col-span-5 relative reveal">
+              <div class="p-3 bg-white border border-vang-di-san/50">
+                <img
+                  src="https://images.unsplash.com/photo-1557750255-c76072a7aad1?auto=format&fit=crop&w=1000&q=85"
+                  alt="Chân dung người phụ nữ Việt Nam trong phiên chợ sớm"
+                  loading="lazy"
+                  class="w-full aspect-[4/5] object-cover"
+                />
+              </div>
+              <figcaption class="text-xs text-nau-nhat mt-2.5">
+                Ảnh tư liệu đời sống · Nhịp sống phiên chợ sớm
+              </figcaption>
+              <div class="editorial-seal" aria-hidden="true">
+                <span>BẢN SẮC</span>
+                <strong>VIỆT</strong>
+                <span>2027</span>
+              </div>
+            </figure>
+
+            <div class="lg:col-span-7 reveal">
+              <p class="eyebrow">Phong cách triển lãm ký ức &amp; đương đại</p>
+              <h2 class="section-h2">
+                Những vẻ đẹp bình dị làm nên
+                <em class="text-do-son italic font-medium">hồn Việt.</em>
+              </h2>
+              <blockquote
+                class="font-serif text-lg sm:text-xl leading-relaxed border-l-2 border-vang-di-san pl-5 my-5 text-nau-than"
+              >
+                “Không cần một máy ảnh đắt tiền hay ê-kíp chuyên nghiệp — bất kỳ
+                ai cũng có thể kể câu chuyện quê hương bằng góc nhìn gần gũi và
+                chân thực nhất của riêng mình.”
+              </blockquote>
+              <p class="text-nau-than/90 mb-6">
+                Việt Nam hiện diện trong những mùa lúa chín vàng óng, phiên chợ
+                sớm vùng cao, nếp nhà sum vầy, ánh đèn của làng nghề truyền
+                thống và những sản vật, thương hiệu Việt đang từng ngày trưởng
+                thành.
+              </p>
+
+              <div
+                class="grid grid-cols-1 sm:grid-cols-12 gap-6 pt-6 border-t border-nau-than/15 items-center"
+              >
+                <figure class="sm:col-span-5">
+                  <img
+                    src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=800&q=82"
+                    alt="Mùa lúa chín và làng quê Việt Nam"
+                    loading="lazy"
+                    class="w-full aspect-[4/3] object-cover"
+                  />
+                  <figcaption class="text-xs text-nau-nhat mt-2">
+                    Mùa vàng quê hương
+                  </figcaption>
+                </figure>
+                <div class="sm:col-span-7">
+                  <p class="text-sm sm:text-base text-nau-nhat mb-4">
+                    Từng bức ảnh, từng thước phim do cộng đồng gửi về sẽ dệt nên
+                    một kho tư liệu số sống động về đất nước và con người Việt
+                    Nam hôm nay.
+                  </p>
+                  <a href="#section-04" class="btn-outline btn-sm">
+                    Khám phá câu chuyện <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="brand-program">
-        <div class="container brand-program-grid reveal">
-          <div>
-            <p class="eyebrow light">Cất cánh thương hiệu</p>
-            <h2>
-              Từ giá trị bản địa<br />đến sức mạnh<br /><em
-                >thương hiệu Việt.</em
+      <!-- 04. GIỚI THIỆU CUỘC THI -->
+      <section id="section-04" class="section-pad bg-xanh-ban-dia text-white">
+        <div class="hs-container">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center"
+          >
+            <!-- Cột trái -->
+            <div class="lg:col-span-6 reveal">
+              <p class="eyebrow text-vang-di-san">Giới thiệu cuộc thi</p>
+              <h2 class="section-h2 text-white">
+                Sân chơi sáng tạo toàn quốc trên nền tảng
+                <em class="text-vang-di-san italic font-medium">Nocal.</em>
+              </h2>
+              <p class="text-white/85 mb-6">
+                <strong>Hương sắc Việt Nam 2027</strong> kết nối cộng đồng yêu
+                nhiếp ảnh, quay phim với doanh nghiệp và địa phương thông qua 4
+                đợt thi theo quý và Chung kết năm — cùng xây dựng kho tư liệu số
+                thường niên mang bản sắc Việt.
+              </p>
+
+              <div
+                class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-5 border-y border-white/20 mb-6"
               >
-            </h2>
+                <article>
+                  <svg
+                    class="w-7 h-7 text-vang-di-san mb-2"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="4"
+                      y="8"
+                      width="24"
+                      height="17"
+                      rx="2"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                    <circle
+                      cx="16"
+                      cy="16.5"
+                      r="4.5"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                    <path
+                      d="M11 8L12.8 5.5H19.2L21 8"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                  </svg>
+                  <h3 class="text-base font-semibold text-vang-di-san mb-1">
+                    Ghi lại
+                  </h3>
+                  <p class="text-xs text-white/80">
+                    Khoảnh khắc chân thực mang dấu ấn quê hương.
+                  </p>
+                </article>
+                <article>
+                  <svg
+                    class="w-7 h-7 text-vang-di-san mb-2"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6 7H26V21H13L7 26V21H6V7Z"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                    <path
+                      d="M11 12.5H21M11 16H17"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                  </svg>
+                  <h3 class="text-base font-semibold text-vang-di-san mb-1">
+                    Kể chuyện
+                  </h3>
+                  <p class="text-xs text-white/80">
+                    Bằng hình ảnh, âm thanh và cảm xúc riêng.
+                  </p>
+                </article>
+                <article>
+                  <svg
+                    class="w-7 h-7 text-vang-di-san mb-2"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <circle
+                      cx="8"
+                      cy="16"
+                      r="3"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                    <circle
+                      cx="23"
+                      cy="8.5"
+                      r="3"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                    <circle
+                      cx="23"
+                      cy="23.5"
+                      r="3"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                    <path
+                      d="M10.7 14.6L20.3 9.9M10.7 17.4L20.3 22.1"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                    />
+                  </svg>
+                  <h3 class="text-base font-semibold text-vang-di-san mb-1">
+                    Lan tỏa
+                  </h3>
+                  <p class="text-xs text-white/80">
+                    Kết nối cộng đồng và thương hiệu Việt.
+                  </p>
+                </article>
+              </div>
+
+              <a href="#section-10" class="btn-gold">
+                Tham gia ngay <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <!-- Cột phải: Trailer 60-90s hỗ trợ phụ đề (CC) -->
+            <div class="lg:col-span-6 reveal">
+              <div
+                class="trailer-frame relative rounded overflow-hidden border border-vang-di-san/45 aspect-[16/10] bg-[#10201A]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1583417267826-aebc4d1542e1?auto=format&fit=crop&w=1200&q=85"
+                  alt="Trailer giới thiệu cuộc thi Hương sắc Việt Nam 2027"
+                  loading="lazy"
+                  class="w-full h-full object-cover opacity-80"
+                />
+                <div
+                  class="absolute inset-0 p-5 flex flex-col justify-between bg-gradient-to-b from-[#10201A]/50 via-[#10201A]/25 to-[#10201A]/85"
+                >
+                  <div
+                    class="flex flex-wrap justify-between items-center gap-2"
+                  >
+                    <span
+                      class="px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wider border border-white/35 bg-black/30"
+                    >
+                      TRAILER CHÍNH THỨC · 60–90 GIÂY
+                    </span>
+                    <span
+                      class="px-2.5 py-1 rounded-full text-[11px] font-semibold border border-vang-di-san/70 text-vang-di-san bg-black/40"
+                    >
+                      CC · Phụ đề Tiếng Việt
+                    </span>
+                  </div>
+
+                  <button
+                    type="button"
+                    data-open-modal="trailer-modal"
+                    aria-label="Phát Video Trailer 60–90 giây có phụ đề"
+                    class="self-center w-[72px] h-[72px] rounded-full border-2 border-vang-di-san bg-do-son/90 text-white text-xl grid place-items-center hover:scale-105 hover:bg-do-son transition cursor-pointer"
+                  >
+                    <span aria-hidden="true">▶</span>
+                  </button>
+
+                  <div>
+                    <strong class="block text-base"
+                      >Hành trình 4 mùa qua lăng kính cộng đồng</strong
+                    >
+                    <span class="text-xs text-white/80"
+                      >Hỗ trợ bật/tắt phụ đề (CC) · Chuẩn Full HD</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <p>
-              Chương trình đào tạo và cố vấn đồng hành cùng doanh nghiệp Việt
-              Nam trong hành trình xây dựng thương hiệu, truyền thông và ứng
-              dụng công nghệ.
+        </div>
+      </section>
+
+      <!-- 05. HẠNG MỤC 01 — HƯƠNG SẮC QUA ẢNH (LƯỚI 2x2 + 3 CTA + MOSAIC) -->
+      <section id="section-05" class="section-pad bg-white">
+        <div class="hs-container">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-10"
+          >
+            <div class="lg:col-span-6 reveal">
+              <p class="eyebrow">Hương sắc qua ảnh</p>
+              <h2 class="section-h2">
+                Một khoảnh khắc –<br /><em
+                  class="text-do-son italic font-medium"
+                  >Một câu chuyện.</em
+                >
+              </h2>
+              <p class="text-nau-nhat mb-6">
+                Ghi lại vẻ đẹp cảnh sắc, con người, văn hóa và thương hiệu Việt
+                bằng một khoảnh khắc đắt giá hoặc phóng sự ảnh giàu cảm xúc.
+              </p>
+
+              <!-- Lưới 4 ô thông số (2x2) kiểu thanham.vn -->
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7"
+                aria-label="Thông số hạng mục ảnh"
+              >
+                <div class="spec-box">
+                  <span class="spec-label">Hình thức</span>
+                  <strong>Ảnh đơn hoặc bộ 3–10 ảnh</strong>
+                </div>
+                <div class="spec-box">
+                  <span class="spec-label">Định dạng</span>
+                  <strong>JPG, JPEG, PNG</strong>
+                </div>
+                <div class="spec-box">
+                  <span class="spec-label">Kích thước &amp; Tỷ lệ</span>
+                  <strong
+                    >Khuyến nghị cạnh dài 2.000 px, không giới hạn tỷ lệ</strong
+                  >
+                </div>
+                <div class="spec-box">
+                  <span class="spec-label">Nền tảng</span>
+                  <strong>Đăng tải &amp; bình chọn trên Nocal</strong>
+                </div>
+              </div>
+
+              <!-- Cụm 3 nút CTA chuẩn thanham.vn -->
+              <div class="flex flex-wrap items-center gap-3">
+                <a href="#section-10" class="btn-primary">Gửi ảnh dự thi ↗</a>
+                <a
+                  href="#section-08"
+                  class="btn-outline"
+                  data-filter-jump="photo"
+                  >Khám phá tác phẩm</a
+                >
+                <button
+                  type="button"
+                  class="btn-text"
+                  data-open-modal="rules-modal"
+                >
+                  Thể lệ →
+                </button>
+              </div>
+            </div>
+
+            <!-- Khung Mosaic triển lãm nhiếp ảnh -->
+            <div class="lg:col-span-6 reveal">
+              <div class="photo-mosaic" aria-label="Triển lãm mosaic nhiếp ảnh">
+                <figure class="mosaic-item m-a">
+                  <img
+                    src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=84"
+                    alt="Cảnh quan núi non và ruộng bậc thang"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <b>Sương sớm trên triền đá</b>
+                    <span>Ảnh bộ · Non nước Việt Nam</span>
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item m-b">
+                  <img
+                    src="https://images.unsplash.com/photo-1557750255-c76072a7aad1?auto=format&fit=crop&w=800&q=84"
+                    alt="Chân dung người lao động Việt Nam"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <b>Gánh hàng sớm</b>
+                    <span>Ảnh đơn · Con người</span>
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item m-c">
+                  <img
+                    src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=84"
+                    alt="Phố cổ đèn lồng truyền thống"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <b>Ánh đèn phố hội</b>
+                    <span>Bản sắc Việt</span>
+                  </figcaption>
+                </figure>
+                <figure class="mosaic-item m-d">
+                  <img
+                    src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=800&q=84"
+                    alt="Ẩm thực quê hương Việt Nam"
+                    loading="lazy"
+                  />
+                  <figcaption>
+                    <b>Bếp quê ngày hội</b>
+                    <span>Hương vị quê hương</span>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06. HẠNG MỤC 02 — HƯƠNG SẮC QUA VIDEO (LƯỚI 2x2 + 3 CTA + SWIPER 9:16) -->
+      <section id="section-06" class="section-pad bg-kem-giay-do">
+        <div class="hs-container">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-8">
+            <div class="lg:col-span-6 reveal">
+              <p class="eyebrow">Hương sắc qua video</p>
+              <h2 class="section-h2">
+                Mỗi thước phim –<br /><em class="text-do-son italic font-medium"
+                  >Một dấu ấn Việt.</em
+                >
+              </h2>
+              <p class="text-nau-nhat">
+                Kể trọn hành trình một sản phẩm truyền thống, chân dung nghệ
+                nhân hay nhịp sống đổi mới bằng ngôn ngữ hình ảnh, âm thanh và
+                chuyển động.
+              </p>
+            </div>
+
+            <div class="lg:col-span-6 reveal">
+              <!-- Lưới 4 ô thông số (2x2) -->
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-5"
+                aria-label="Thông số hạng mục video"
+              >
+                <div class="spec-box bg-white">
+                  <span class="spec-label">Thời lượng</span>
+                  <strong>30–180 giây</strong>
+                </div>
+                <div class="spec-box bg-white">
+                  <span class="spec-label">Định dạng</span>
+                  <strong>MP4, MOV (Full HD)</strong>
+                </div>
+                <div class="spec-box bg-white">
+                  <span class="spec-label">Khung hình</span>
+                  <strong>Ưu tiên dọc 9:16 (nhận 16:9, 1:1)</strong>
+                </div>
+                <div class="spec-box bg-white">
+                  <span class="spec-label">Ngôn ngữ</span>
+                  <strong>Tiếng Việt hoặc có phụ đề</strong>
+                </div>
+              </div>
+
+              <!-- Cụm 3 nút CTA -->
+              <div class="flex flex-wrap items-center gap-3">
+                <a href="#section-10" class="btn-primary">Gửi video dự thi ↗</a>
+                <a
+                  href="#section-08"
+                  class="btn-outline"
+                  data-filter-jump="video"
+                  >Khám phá video</a
+                >
+                <button
+                  type="button"
+                  class="btn-text"
+                  data-open-modal="rules-modal"
+                >
+                  Thể lệ →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-wrap items-center justify-between gap-3 px-4 py-3 bg-white border border-nau-than/15 mb-6 text-xs sm:text-sm reveal"
+          >
+            <span class="text-nau-nhat">
+              Swiper Video dọc <strong>9:16</strong> · Mặc định tắt tiếng (Muted
+              Preview)
+            </span>
+            <div class="flex items-center gap-3">
+              <button
+                type="button"
+                id="toggle-video-motion"
+                aria-pressed="true"
+                class="px-3.5 py-1.5 rounded-full border border-nau-than/20 bg-kem-giay-do text-xs font-medium cursor-pointer"
+              >
+                Chuyển động xem trước: <b>Bật</b>
+              </button>
+              <div class="flex gap-2">
+                <button
+                  type="button"
+                  class="swiper-nav-btn video-prev"
+                  aria-label="Video trước"
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  class="swiper-nav-btn video-next"
+                  aria-label="Video tiếp theo"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper Slider thẻ video dọc 9:16 -->
+          <div
+            class="swiper video-swiper reveal"
+            aria-label="Danh sách video dự thi mẫu"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <article class="reel-card">
+                  <div class="reel-media">
+                    <img
+                      src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=720&h=1280&q=82"
+                      alt="Video Đèn lồng phố cổ qua bàn tay thợ trẻ"
+                      loading="lazy"
+                    />
+                    <span class="reel-tag">9:16 · 01:18</span>
+                    <span class="reel-muted">Tắt tiếng</span>
+                    <button
+                      class="reel-play"
+                      type="button"
+                      data-open-modal="trailer-modal"
+                      aria-label="Phát video Đèn lồng phố cổ"
+                    >
+                      ▶
+                    </button>
+                  </div>
+                  <h3 class="text-base font-semibold mt-3 mb-1">
+                    Đèn lồng phố cổ qua bàn tay thợ trẻ
+                  </h3>
+                  <p class="text-xs text-nau-nhat">
+                    Tinh hoa làng nghề · Quảng Nam
+                  </p>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="reel-card">
+                  <div class="reel-media">
+                    <img
+                      src="https://images.unsplash.com/photo-1557750255-c76072a7aad1?auto=format&fit=crop&w=720&h=1280&q=82"
+                      alt="Video 5 giờ sáng ở phiên chợ vùng cao"
+                      loading="lazy"
+                    />
+                    <span class="reel-tag">9:16 · 00:54</span>
+                    <span class="reel-muted">Tắt tiếng</span>
+                    <button
+                      class="reel-play"
+                      type="button"
+                      data-open-modal="trailer-modal"
+                      aria-label="Phát video 5 giờ sáng ở phiên chợ vùng cao"
+                    >
+                      ▶
+                    </button>
+                  </div>
+                  <h3 class="text-base font-semibold mt-3 mb-1">
+                    5 giờ sáng ở phiên chợ vùng cao
+                  </h3>
+                  <p class="text-xs text-nau-nhat">
+                    Con người Việt Nam · Hà Giang
+                  </p>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="reel-card">
+                  <div class="reel-media">
+                    <img
+                      src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=720&h=1280&q=82"
+                      alt="Video Hương vị mâm cỗ ngày đoàn viên"
+                      loading="lazy"
+                    />
+                    <span class="reel-tag">9:16 · 01:42</span>
+                    <span class="reel-muted">Tắt tiếng</span>
+                    <button
+                      class="reel-play"
+                      type="button"
+                      data-open-modal="trailer-modal"
+                      aria-label="Phát video Hương vị mâm cỗ"
+                    >
+                      ▶
+                    </button>
+                  </div>
+                  <h3 class="text-base font-semibold mt-3 mb-1">
+                    Hương vị mâm cỗ ngày đoàn viên
+                  </h3>
+                  <p class="text-xs text-nau-nhat">Hương vị quê hương · Huế</p>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="reel-card">
+                  <div class="reel-media">
+                    <img
+                      src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=720&h=1280&q=82"
+                      alt="Video Từ vườn chè cổ thụ đến thương hiệu Việt"
+                      loading="lazy"
+                    />
+                    <span class="reel-tag">9:16 · 02:05</span>
+                    <span class="reel-muted">Tắt tiếng</span>
+                    <button
+                      class="reel-play"
+                      type="button"
+                      data-open-modal="trailer-modal"
+                      aria-label="Phát video Từ vườn chè cổ thụ"
+                    >
+                      ▶
+                    </button>
+                  </div>
+                  <h3 class="text-base font-semibold mt-3 mb-1">
+                    Từ vườn chè cổ thụ đến thương hiệu Việt
+                  </h3>
+                  <p class="text-xs text-nau-nhat">
+                    Tự hào thương hiệu Việt · Thái Nguyên
+                  </p>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="reel-card">
+                  <div class="reel-media">
+                    <img
+                      src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=720&h=1280&q=82"
+                      alt="Video Mùa nước nổi miền Tây"
+                      loading="lazy"
+                    />
+                    <span class="reel-tag">9:16 · 01:26</span>
+                    <span class="reel-muted">Tắt tiếng</span>
+                    <button
+                      class="reel-play"
+                      type="button"
+                      data-open-modal="trailer-modal"
+                      aria-label="Phát video Mùa nước nổi miền Tây"
+                    >
+                      ▶
+                    </button>
+                  </div>
+                  <h3 class="text-base font-semibold mt-3 mb-1">
+                    Nhịp chèo trên sông mùa nước nổi
+                  </h3>
+                  <p class="text-xs text-nau-nhat">
+                    Non nước Việt Nam · An Giang
+                  </p>
+                </article>
+              </div>
+            </div>
+            <div class="swiper-pagination video-pagination mt-6"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07. CHỦ ĐỀ DỰ THI (4 QUÝ + 6 NHÓM NỘI DUNG + SWIPER MOBILE) -->
+      <section id="section-07" class="section-pad bg-kem-tram">
+        <div class="hs-container">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-9 reveal"
+          >
+            <div class="lg:col-span-6">
+              <p class="eyebrow">Chủ đề dự thi</p>
+              <h2 class="section-h2">
+                Bốn chủ đề Quý &amp;<br /><em
+                  class="text-do-son italic font-medium"
+                  >sáu lát cắt Việt Nam.</em
+                >
+              </h2>
+            </div>
+            <p
+              class="lg:col-span-6 text-nau-nhat text-[15px] lg:justify-self-end max-w-xl"
+            >
+              Chuyển tab để xem định hướng chủ đề theo từng quý năm 2027. Nhấn
+              vào từng nhóm nội dung để mở danh sách tác phẩm đã lọc tại
+              <code>/cuoc-thi</code>.
             </p>
-            <a class="button button-gold" href="#top"
-              >Tìm hiểu chương trình <span>→</span></a
+          </div>
+
+          <!-- Tab 4 Quý -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-5 reveal"
+            role="tablist"
+            aria-label="Chủ đề 4 Quý năm 2027"
+          >
+            <button
+              class="quarter-tab active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-quarter="Q1"
+            >
+              <small>Quý I · 01–03/2027</small>
+              <strong>Sắc xuân Việt Nam</strong>
+            </button>
+            <button
+              class="quarter-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-quarter="Q2"
+            >
+              <small>Quý II · 04–06/2027</small>
+              <strong>Tinh hoa đất Việt</strong>
+            </button>
+            <button
+              class="quarter-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-quarter="Q3"
+            >
+              <small>Quý III · 07–09/2027</small>
+              <strong>Việt Nam trong tôi</strong>
+            </button>
+            <button
+              class="quarter-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-quarter="Q4"
+            >
+              <small>Quý IV · 10–12/2027</small>
+              <strong>Việt Nam vươn mình</strong>
+            </button>
+          </div>
+
+          <div
+            class="flex flex-wrap justify-between items-center gap-4 p-6 bg-white border border-vang-di-san/60 border-l-4 border-l-do-son mb-7 reveal"
+            aria-live="polite"
+          >
+            <div>
+              <span
+                id="qs-badge"
+                class="inline-block text-[11px] font-bold tracking-wider uppercase text-do-son mb-1"
+              >
+                ĐANG MỞ CỔNG · QUÝ I
+              </span>
+              <h3 id="qs-title" class="text-xl font-semibold mb-1">
+                Quý I: Sắc xuân Việt Nam
+              </h3>
+              <p id="qs-desc" class="text-sm text-nau-nhat max-w-2xl">
+                Tập trung khai thác Tết cổ truyền, lễ hội đầu xuân, phong tục,
+                cảnh sắc thiên nhiên và hương vị quê hương trên mọi miền.
+              </p>
+            </div>
+            <div class="flex flex-col sm:items-end gap-2 text-sm">
+              <span
+                >Hashtag quý:
+                <code id="qs-hashtag" class="font-semibold text-do-son"
+                  >#SacXuanVietNam</code
+                ></span
+              >
+              <a id="qs-link" href="/cuoc-thi?quy=Q1" class="btn-text">
+                Xem tác phẩm Q1 tại /cuoc-thi →
+              </a>
+            </div>
+          </div>
+
+          <!-- 6 Nhóm nội dung (3x2 Desktop, 2x3 Tablet, Swiper Carousel Mobile) -->
+          <div class="swiper theme-swiper reveal">
+            <div class="swiper-wrapper theme-grid-wrapper">
+              <div class="swiper-slide">
+                <a
+                  class="theme-card"
+                  href="/cuoc-thi?quy=Q1&chu-de=non-nuoc"
+                  data-theme="non-nuoc"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1583417267826-aebc4d1542e1?auto=format&fit=crop&w=900&q=80"
+                    alt="Non nước Việt Nam"
+                    loading="lazy"
+                  />
+                  <div class="theme-card-top">
+                    <span class="theme-num">01</span>
+                    <span class="theme-axis">Sắc màu quê hương</span>
+                  </div>
+                  <div class="theme-card-bottom">
+                    <h3>Non nước Việt Nam</h3>
+                    <p>
+                      Thiên nhiên, danh lam thắng cảnh, du lịch và trải nghiệm.
+                    </p>
+                    <span class="theme-cta">Khám phá tác phẩm ↗</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a
+                  class="theme-card"
+                  href="/cuoc-thi?quy=Q1&chu-de=ban-sac"
+                  data-theme="ban-sac"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80"
+                    alt="Bản sắc Việt"
+                    loading="lazy"
+                  />
+                  <div class="theme-card-top">
+                    <span class="theme-num">02</span>
+                    <span class="theme-axis">Sắc màu quê hương</span>
+                  </div>
+                  <div class="theme-card-bottom">
+                    <h3>Bản sắc Việt</h3>
+                    <p>
+                      Di sản, lễ hội truyền thống, phong tục và kiến trúc văn
+                      hóa.
+                    </p>
+                    <span class="theme-cta">Khám phá tác phẩm ↗</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a
+                  class="theme-card"
+                  href="/cuoc-thi?quy=Q1&chu-de=con-nguoi"
+                  data-theme="con-nguoi"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1557750255-c76072a7aad1?auto=format&fit=crop&w=900&q=80"
+                    alt="Con người Việt Nam"
+                    loading="lazy"
+                  />
+                  <div class="theme-card-top">
+                    <span class="theme-num">03</span>
+                    <span class="theme-axis">Con người Việt Nam</span>
+                  </div>
+                  <div class="theme-card-bottom">
+                    <h3>Con người Việt Nam</h3>
+                    <p>
+                      Chân dung, lao động, nhịp sống đời thường và câu chuyện
+                      đẹp.
+                    </p>
+                    <span class="theme-cta">Khám phá tác phẩm ↗</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a
+                  class="theme-card"
+                  href="/cuoc-thi?quy=Q1&chu-de=huong-vi"
+                  data-theme="huong-vi"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=900&q=80"
+                    alt="Hương vị quê hương"
+                    loading="lazy"
+                  />
+                  <div class="theme-card-top">
+                    <span class="theme-num">04</span>
+                    <span class="theme-axis">Tinh hoa sản phẩm Việt</span>
+                  </div>
+                  <div class="theme-card-bottom">
+                    <h3>Hương vị quê hương</h3>
+                    <p>
+                      Ẩm thực vùng miền, đặc sản truyền thống và sản vật địa
+                      phương.
+                    </p>
+                    <span class="theme-cta">Khám phá tác phẩm ↗</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a
+                  class="theme-card"
+                  href="/cuoc-thi?quy=Q1&chu-de=lang-nghe"
+                  data-theme="lang-nghe"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=900&q=80"
+                    alt="Tinh hoa làng nghề"
+                    loading="lazy"
+                  />
+                  <div class="theme-card-top">
+                    <span class="theme-num">05</span>
+                    <span class="theme-axis">Tinh hoa sản phẩm Việt</span>
+                  </div>
+                  <div class="theme-card-bottom">
+                    <h3>Tinh hoa làng nghề</h3>
+                    <p>
+                      Nghệ nhân giữ lửa nghề, sản phẩm thủ công và tinh hoa
+                      OCOP.
+                    </p>
+                    <span class="theme-cta">Khám phá tác phẩm ↗</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a
+                  class="theme-card"
+                  href="/cuoc-thi?quy=Q1&chu-de=thuong-hieu-viet"
+                  data-theme="thuong-hieu-viet"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=80"
+                    alt="Tự hào thương hiệu Việt"
+                    loading="lazy"
+                  />
+                  <div class="theme-card-top">
+                    <span class="theme-num">06</span>
+                    <span class="theme-axis">Việt Nam đổi mới</span>
+                  </div>
+                  <div class="theme-card-bottom">
+                    <h3>Tự hào thương hiệu Việt</h3>
+                    <p>
+                      Sản phẩm, doanh nghiệp, khởi nghiệp, đổi mới sáng tạo
+                      &amp; bền vững.
+                    </p>
+                    <span class="theme-cta">Khám phá tác phẩm ↗</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div
+              class="swiper-pagination theme-pagination sm:hidden mt-4"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08. TÁC PHẨM NỔI BẬT -->
+      <section id="section-08" class="section-pad bg-white">
+        <div class="hs-container">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-9 reveal"
+          >
+            <div class="lg:col-span-6">
+              <p class="eyebrow">Tác phẩm nổi bật</p>
+              <h2 class="section-h2">
+                Những góc nhìn
+                <em class="text-do-son italic font-medium">Việt Nam.</em>
+              </h2>
+            </div>
+
+            <div class="lg:col-span-6 lg:justify-self-end">
+              <p class="text-xs text-nau-nhat mb-3">
+                Chỉ hiển thị tác phẩm đã duyệt từ Nocal · Dữ liệu mẫu minh họa
+                chờ mở cổng 01/2027
+              </p>
+              <div
+                class="flex flex-wrap gap-2"
+                role="group"
+                aria-label="Bộ lọc tác phẩm nổi bật"
+              >
+                <button
+                  class="filter-btn active"
+                  type="button"
+                  data-work-filter="all"
+                >
+                  Tất cả
+                </button>
+                <button
+                  class="filter-btn"
+                  type="button"
+                  data-work-filter="photo"
+                >
+                  Ảnh
+                </button>
+                <button
+                  class="filter-btn"
+                  type="button"
+                  data-work-filter="video"
+                >
+                  Video
+                </button>
+                <button
+                  class="filter-btn"
+                  type="button"
+                  data-work-filter="current-quarter"
+                >
+                  Quý hiện tại (Quý I)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="works-grid" class="works-grid reveal">
+            <article class="work-card" data-type="photo" data-quarter="Q1">
+              <div class="work-thumb">
+                <img
+                  src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=80"
+                  alt="Tác phẩm Nếp núi đón xuân về"
+                  loading="lazy"
+                />
+                <span class="work-code">HSVN27-Q1-A-0001</span>
+                <span class="work-type">ẢNH</span>
+              </div>
+              <div class="work-meta">
+                <h3>Nếp núi đón xuân về</h3>
+                <p class="work-author">Nguyễn Minh Quân · Lào Cai</p>
+                <div class="work-stats">
+                  <span>Non nước Việt Nam</span>
+                  <span>♥ 1.248 hợp lệ</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card" data-type="photo" data-quarter="Q1">
+              <div class="work-thumb">
+                <img
+                  src="https://images.unsplash.com/photo-1557750255-c76072a7aad1?auto=format&fit=crop&w=900&q=80"
+                  alt="Tác phẩm Phiên chợ sớm bên triền dốc"
+                  loading="lazy"
+                />
+                <span class="work-code">HSVN27-Q1-A-0014</span>
+                <span class="work-type">ẢNH</span>
+              </div>
+              <div class="work-meta">
+                <h3>Phiên chợ sớm bên triền dốc</h3>
+                <p class="work-author">Trần Thảo Vy · Hà Giang</p>
+                <div class="work-stats">
+                  <span>Con người Việt Nam</span>
+                  <span>♥ 982 hợp lệ</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card" data-type="video" data-quarter="Q1">
+              <div class="work-thumb is-video">
+                <img
+                  src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=720&h=960&q=80"
+                  alt="Video Ánh đèn lồng bên sông Hoài"
+                  loading="lazy"
+                />
+                <span class="work-code">HSVN27-Q1-V-0003</span>
+                <span class="work-type">VIDEO · 01:12</span>
+              </div>
+              <div class="work-meta">
+                <h3>Ánh đèn lồng bên sông Hoài</h3>
+                <p class="work-author">Lê Hoàng Nam · Quảng Nam</p>
+                <div class="work-stats">
+                  <span>Bản sắc Việt</span>
+                  <span>♥ 1.560 hợp lệ</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card" data-type="photo" data-quarter="Q2">
+              <div class="work-thumb">
+                <img
+                  src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=900&q=80"
+                  alt="Tác phẩm Đất trời vào vụ mới"
+                  loading="lazy"
+                />
+                <span class="work-code">HSVN27-Q2-A-0008</span>
+                <span class="work-type">ẢNH</span>
+              </div>
+              <div class="work-meta">
+                <h3>Đất trời vào vụ mới</h3>
+                <p class="work-author">Phạm Anh Tuấn · Ninh Bình</p>
+                <div class="work-stats">
+                  <span>Non nước Việt Nam</span>
+                  <span>♥ 874 hợp lệ</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card" data-type="video" data-quarter="Q1">
+              <div class="work-thumb is-video">
+                <img
+                  src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=720&h=960&q=80"
+                  alt="Video Hương vị quê nhà ngày Tết"
+                  loading="lazy"
+                />
+                <span class="work-code">HSVN27-Q1-V-0011</span>
+                <span class="work-type">VIDEO · 01:45</span>
+              </div>
+              <div class="work-meta">
+                <h3>Hương vị quê nhà ngày Tết</h3>
+                <p class="work-author">Đặng Bảo Ngọc · Huế</p>
+                <div class="work-stats">
+                  <span>Hương vị quê hương</span>
+                  <span>♥ 1.135 hợp lệ</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card" data-type="video" data-quarter="Q1">
+              <div class="work-thumb is-video">
+                <img
+                  src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=720&h=960&q=80"
+                  alt="Video Bàn tay trẻ giữ hồn gốm Việt"
+                  loading="lazy"
+                />
+                <span class="work-code">HSVN27-Q1-V-0019</span>
+                <span class="work-type">VIDEO · 01:58</span>
+              </div>
+              <div class="work-meta">
+                <h3>Bàn tay trẻ giữ hồn gốm Việt</h3>
+                <p class="work-author">Vũ Gia Huy · Bình Dương</p>
+                <div class="work-stats">
+                  <span>Tự hào thương hiệu Việt</span>
+                  <span>♥ 1.040 hợp lệ</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card" data-type="photo" data-quarter="Q1">
+              <div class="work-thumb">
+                <img
+                  src="https://images.unsplash.com/photo-1583417267826-aebc4d1542e1?auto=format&fit=crop&w=900&q=80"
+                  alt="Tác phẩm Sắc xuân trên dải biên cương"
+                  loading="lazy"
+                />
+                <span class="work-code">HSVN27-Q1-A-0022</span>
+                <span class="work-type">ẢNH</span>
+              </div>
+              <div class="work-meta">
+                <h3>Sắc xuân trên dải biên cương</h3>
+                <p class="work-author">Hoàng Hải Đăng · Cao Bằng</p>
+                <div class="work-stats">
+                  <span>Non nước Việt Nam</span>
+                  <span>♥ 915 hợp lệ</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card" data-type="video" data-quarter="Q1">
+              <div class="work-thumb is-video">
+                <img
+                  src="https://images.unsplash.com/photo-1557750255-c76072a7aad1?auto=format&fit=crop&w=720&h=960&q=80"
+                  alt="Video Bình minh trên bến cá miền Trung"
+                  loading="lazy"
+                />
+                <span class="work-code">HSVN27-Q1-V-0024</span>
+                <span class="work-type">VIDEO · 01:08</span>
+              </div>
+              <div class="work-meta">
+                <h3>Bình minh trên bến cá miền Trung</h3>
+                <p class="work-author">Nguyễn Thị Mai · Phú Yên</p>
+                <div class="work-stats">
+                  <span>Con người Việt Nam</span>
+                  <span>♥ 1.290 hợp lệ</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card" data-type="video" data-quarter="Q2">
+              <div class="work-thumb is-video">
+                <img
+                  src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=720&h=960&q=80"
+                  alt="Video Sợi cói quê nhà qua trăm năm"
+                  loading="lazy"
+                />
+                <span class="work-code">HSVN27-Q2-V-0005</span>
+                <span class="work-type">VIDEO · 01:36</span>
+              </div>
+              <div class="work-meta">
+                <h3>Sợi cói quê nhà qua trăm năm</h3>
+                <p class="work-author">Trần Quốc Bảo · Đồng Tháp</p>
+                <div class="work-stats">
+                  <span>Tinh hoa làng nghề</span>
+                  <span>♥ 842 hợp lệ</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="text-center mt-10">
+            <a href="/cuoc-thi" class="btn-outline">
+              Khám phá toàn bộ trên Cổng thi /cuoc-thi →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09. GIẢI THƯỞNG (TRUNG TÂM NỀN KEM #F6F0E5 + VÀNG DI SẢN #C6A15B) -->
+      <section
+        id="section-09"
+        class="section-pad bg-kem-giay-do border-y border-vang-di-san/45"
+      >
+        <div class="hs-container">
+          <!-- Khối nhấn trung tâm chuẩn thanham.vn -->
+          <div class="text-center max-w-3xl mx-auto mb-10 reveal">
+            <p class="eyebrow">Vinh danh sáng tạo &amp; Giải thưởng</p>
+            <h2 class="section-h2">
+              Tổng giá trị
+              <em class="text-do-son italic font-medium">giải thưởng.</em>
+            </h2>
+            <div
+              class="my-5 p-7 sm:p-9 bg-white border-2 border-vang-di-san shadow-[10px_10px_0_rgba(198,161,91,0.22)]"
+            >
+              <span
+                class="block text-xs font-bold uppercase tracking-[0.16em] text-do-son mb-2"
+              >
+                TỔNG GIÁ TRỊ GIẢI THƯỞNG
+              </span>
+              <strong
+                class="block font-serif text-4xl sm:text-5xl lg:text-6xl text-vang-di-san leading-tight"
+              >
+                70.000.000 VNĐ
+              </strong>
+              <p class="text-sm text-nau-nhat mt-2">
+                Phân bổ cho 4 đợt thi theo quý và Chung kết năm 2027 (bao gồm
+                hiện kim &amp; quà tặng)
+              </p>
+            </div>
+          </div>
+
+          <!-- Tách thẻ hạng mục Ảnh / Video và Giải Chuyên môn / Cộng đồng -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8 reveal">
+            <article class="bg-white border border-vang-di-san/60 p-7">
+              <div class="pb-4 mb-5 border-b border-nau-than/10">
+                <span
+                  class="inline-block text-[11px] font-bold tracking-widest uppercase px-2.5 py-1 bg-vang-di-san/20 text-[#7C5F24] mb-2"
+                >
+                  HẠNG MỤC 01
+                </span>
+                <h3 class="text-xl font-semibold">Hương sắc qua ảnh</h3>
+              </div>
+              <div class="space-y-5">
+                <div>
+                  <h4
+                    class="text-xs font-bold uppercase tracking-wider text-do-son mb-2.5"
+                  >
+                    Giải Chuyên môn (Hội đồng Giám khảo)
+                  </h4>
+                  <ul class="award-list">
+                    <li>
+                      <strong>Giải Nhất</strong
+                      ><span>Huy hiệu + Chứng nhận + Hiện kim</span>
+                    </li>
+                    <li>
+                      <strong>Giải Nhì</strong
+                      ><span>Huy hiệu + Chứng nhận + Hiện kim</span>
+                    </li>
+                    <li>
+                      <strong>Giải Ba</strong
+                      ><span>Huy hiệu + Chứng nhận + Hiện kim</span>
+                    </li>
+                    <li>
+                      <strong>Giải Khuyến khích</strong
+                      ><span>Chứng nhận + Quà tặng</span>
+                    </li>
+                    <li>
+                      <strong>Giải Chuyên đề</strong
+                      ><span>Theo chủ đề quý &amp; đối tác</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4
+                    class="text-xs font-bold uppercase tracking-wider text-do-son mb-2.5"
+                  >
+                    Giải Cộng đồng (Bình chọn trên Nocal)
+                  </h4>
+                  <ul class="award-list">
+                    <li>
+                      <strong>Tác phẩm được yêu thích nhất</strong
+                      ><span>Lượt tương tác hợp lệ xác minh</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-white border border-vang-di-san/60 p-7">
+              <div class="pb-4 mb-5 border-b border-nau-than/10">
+                <span
+                  class="inline-block text-[11px] font-bold tracking-widest uppercase px-2.5 py-1 bg-vang-di-san/20 text-[#7C5F24] mb-2"
+                >
+                  HẠNG MỤC 02
+                </span>
+                <h3 class="text-xl font-semibold">Hương sắc qua video</h3>
+              </div>
+              <div class="space-y-5">
+                <div>
+                  <h4
+                    class="text-xs font-bold uppercase tracking-wider text-do-son mb-2.5"
+                  >
+                    Giải Chuyên môn (Hội đồng Giám khảo)
+                  </h4>
+                  <ul class="award-list">
+                    <li>
+                      <strong>Giải Nhất</strong
+                      ><span>Huy hiệu + Chứng nhận + Hiện kim</span>
+                    </li>
+                    <li>
+                      <strong>Giải Nhì</strong
+                      ><span>Huy hiệu + Chứng nhận + Hiện kim</span>
+                    </li>
+                    <li>
+                      <strong>Giải Ba</strong
+                      ><span>Huy hiệu + Chứng nhận + Hiện kim</span>
+                    </li>
+                    <li>
+                      <strong>Giải Khuyến khích</strong
+                      ><span>Chứng nhận + Quà tặng</span>
+                    </li>
+                    <li>
+                      <strong>Giải Chuyên đề</strong
+                      ><span>Theo chủ đề quý &amp; đối tác</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4
+                    class="text-xs font-bold uppercase tracking-wider text-do-son mb-2.5"
+                  >
+                    Giải Cộng đồng (Bình chọn trên Nocal)
+                  </h4>
+                  <ul class="award-list">
+                    <li>
+                      <strong>Tác phẩm được yêu thích nhất</strong
+                      ><span>Lượt tương tác hợp lệ xác minh</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- 3 nhãn (pill/badge) tóm tắt bên dưới chuẩn thanham.vn -->
+          <div class="flex flex-wrap justify-center gap-3 reveal">
+            <span class="award-summary-pill">4 Đợt thi theo Quý</span>
+            <span class="award-summary-pill">Chung kết năm</span>
+            <span class="award-summary-pill">Giấy chứng nhận điện tử</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. HƯỚNG DẪN THAM GIA (4 THẺ BƯỚC NGANG + MODAL XEM & COPY MẪU BÀI) -->
+      <section id="section-10" class="section-pad bg-white">
+        <div class="hs-container">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-10 reveal"
+          >
+            <div class="lg:col-span-7">
+              <p class="eyebrow">Hướng dẫn tham gia</p>
+              <h2 class="section-h2">
+                Bốn bước để câu chuyện Việt<br />của bạn được
+                <em class="text-do-son italic font-medium">lan tỏa.</em>
+              </h2>
+            </div>
+            <p class="lg:col-span-5 text-sm sm:text-base text-nau-nhat">
+              Gắn bộ hashtag chuẩn
+              <code>#HuongSacVietNam #HuongSacVietNam2027 #Nocal</code> cùng
+              hashtag từng quý khi đăng bài công khai trên Nocal.
+            </p>
+          </div>
+
+          <ol
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-nau-than/15 mb-8 reveal"
+          >
+            <li class="step-card">
+              <div class="flex justify-between items-center mb-5">
+                <span class="font-serif text-3xl text-do-son">01</span>
+                <svg
+                  class="w-7 h-7 text-vang-di-san"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="14"
+                    cy="10"
+                    r="4"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                  />
+                  <path
+                    d="M6 23C6 19 9.5 16.5 14 16.5C18.5 16.5 22 19 22 23"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-[17px] font-semibold mb-2">
+                Đăng ký / Đăng nhập Nocal
+              </h3>
+              <p class="text-sm text-nau-nhat">
+                Tạo hoặc đăng nhập tài khoản Nocal hợp lệ và nắm rõ thể lệ cuộc
+                thi.
+              </p>
+            </li>
+
+            <li class="step-card">
+              <div class="flex justify-between items-center mb-5">
+                <span class="font-serif text-3xl text-do-son">02</span>
+                <svg
+                  class="w-7 h-7 text-vang-di-san"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <rect
+                    x="4"
+                    y="6"
+                    width="20"
+                    height="16"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                  />
+                  <path
+                    d="M4 18L10 12.5L15 17L19 13.5L24 18"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-[17px] font-semibold mb-2">
+                Sáng tạo theo chủ đề quý
+              </h3>
+              <p class="text-sm text-nau-nhat">
+                Thực hiện ảnh đơn/bộ 3–10 ảnh hoặc video 30–180 giây đúng quy
+                cách.
+              </p>
+            </li>
+
+            <li class="step-card">
+              <div class="flex justify-between items-center mb-5">
+                <span class="font-serif text-3xl text-do-son">03</span>
+                <svg
+                  class="w-7 h-7 text-vang-di-san"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 19V5M14 5L9 10M14 5L19 10"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                  />
+                  <path
+                    d="M5 18V22C5 22.6 5.4 23 6 23H22C22.6 23 23 22.6 23 22V18"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-[17px] font-semibold mb-2">
+                Đăng Nocal &amp; Gửi link
+              </h3>
+              <p class="text-sm text-nau-nhat">
+                Đăng công khai kèm mẫu bài, hashtag chuẩn &amp; hashtag quý rồi
+                gửi đường dẫn về Cổng thi.
+              </p>
+            </li>
+
+            <li class="step-card">
+              <div class="flex justify-between items-center mb-5">
+                <span class="font-serif text-3xl text-do-son">04</span>
+                <svg
+                  class="w-7 h-7 text-vang-di-san"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 4L16.8 9.8L23 10.7L18.5 15L19.6 21.2L14 18.2L8.4 21.2L9.5 15L5 10.7L11.2 9.8L14 4Z"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-[17px] font-semibold mb-2">
+                Nhận mã dự thi &amp; Bình chọn
+              </h3>
+              <p class="text-sm text-nau-nhat">
+                Nhận mã dự thi (VD: <code>HSVN27-Q1-A-0001</code>) sau duyệt 72h
+                và chia sẻ bình chọn.
+              </p>
+            </li>
+          </ol>
+
+          <div class="flex flex-wrap items-center justify-center gap-4 reveal">
+            <a href="/cuoc-thi" class="btn-primary">
+              Tham gia ngay trên Cổng thi ↗
+            </a>
+            <button
+              type="button"
+              class="btn-outline"
+              data-open-modal="template-modal"
+            >
+              Xem &amp; Copy mẫu bài dự thi
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. HÀNH TRÌNH CUỘC THI & ĐỒNG HỒ ĐẾM NGƯỢC THỜI GIAN THỰC -->
+      <section id="section-11" class="section-pad bg-kem-giay-do">
+        <div class="hs-container">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12 reveal"
+          >
+            <div class="lg:col-span-6">
+              <p class="eyebrow">Hành trình cuộc thi &amp; Đếm ngược</p>
+              <h2 class="section-h2">
+                Lộ trình 2027 &amp;<br /><em
+                  class="text-do-son italic font-medium"
+                  >nhịp 13 tuần mỗi quý.</em
+                >
+              </h2>
+              <p class="text-nau-nhat text-[15px]">
+                Trạng thái từng chặng tự động cập nhật theo thời gian thực. Mỗi
+                quý gồm 4 nhịp: Nhận bài → Bình chọn → Chấm giải → Công bố.
+              </p>
+            </div>
+
+            <!-- Đồng hồ đếm ngược thời gian thực chuẩn thanham.vn -->
+            <div class="lg:col-span-6">
+              <div
+                class="p-6 sm:p-7 bg-white border border-vang-di-san/70 shadow-sm"
+              >
+                <div
+                  class="flex flex-wrap justify-between items-center gap-2 mb-4"
+                >
+                  <span
+                    id="countdown-label"
+                    class="text-xs font-bold uppercase tracking-wider text-do-son"
+                  >
+                    Đếm ngược tới hạn nộp bài Quý I (31/03/2027)
+                  </span>
+                  <span class="text-xs text-nau-nhat">Múi giờ UTC+7</span>
+                </div>
+                <div class="grid grid-cols-4 gap-3 text-center" aria-live="off">
+                  <div class="countdown-cell">
+                    <strong id="cd-days">--</strong>
+                    <span>Ngày</span>
+                  </div>
+                  <div class="countdown-cell">
+                    <strong id="cd-hours">--</strong>
+                    <span>Giờ</span>
+                  </div>
+                  <div class="countdown-cell">
+                    <strong id="cd-minutes">--</strong>
+                    <span>Phút</span>
+                  </div>
+                  <div class="countdown-cell">
+                    <strong id="cd-seconds">--</strong>
+                    <span>Giây</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline ngang đánh số 1 -> 5 -->
+          <div id="year-timeline" class="timeline-year reveal">
+            <article
+              class="tl-node"
+              data-start="2026-11-01"
+              data-end="2026-12-31"
+            >
+              <span class="tl-badge"></span>
+              <div class="tl-marker-row">
+                <span class="tl-num">1</span>
+              </div>
+              <time class="block text-xs font-semibold text-nau-nhat mt-3 mb-1"
+                >11–12 / 2026</time
+              >
+              <h3 class="text-base font-semibold mb-1">
+                Chuẩn bị &amp; Phát động
+              </h3>
+              <p class="text-xs text-nau-nhat">
+                Hoàn thiện nền tảng, thể lệ, đối tác và mở đăng ký.
+              </p>
+            </article>
+
+            <article
+              class="tl-node"
+              data-start="2027-01-01"
+              data-end="2027-03-31"
+            >
+              <span class="tl-badge"></span>
+              <div class="tl-marker-row">
+                <span class="tl-num">2</span>
+              </div>
+              <time class="block text-xs font-semibold text-nau-nhat mt-3 mb-1"
+                >Quý I · 01–03/2027</time
+              >
+              <h3 class="text-base font-semibold mb-1">Sắc xuân Việt Nam</h3>
+              <p class="text-xs text-nau-nhat">
+                Tết, lễ hội, phong tục, cảnh sắc và hương vị quê hương.
+              </p>
+            </article>
+
+            <article
+              class="tl-node"
+              data-start="2027-04-01"
+              data-end="2027-06-30"
+            >
+              <span class="tl-badge"></span>
+              <div class="tl-marker-row">
+                <span class="tl-num">3</span>
+              </div>
+              <time class="block text-xs font-semibold text-nau-nhat mt-3 mb-1"
+                >Quý II · 04–06/2027</time
+              >
+              <h3 class="text-base font-semibold mb-1">Tinh hoa đất Việt</h3>
+              <p class="text-xs text-nau-nhat">
+                Làng nghề, sản vật OCOP, văn hóa và ẩm thực vùng miền.
+              </p>
+            </article>
+
+            <article
+              class="tl-node"
+              data-start="2027-07-01"
+              data-end="2027-09-30"
+            >
+              <span class="tl-badge"></span>
+              <div class="tl-marker-row">
+                <span class="tl-num">4</span>
+              </div>
+              <time class="block text-xs font-semibold text-nau-nhat mt-3 mb-1"
+                >Quý III · 07–09/2027</time
+              >
+              <h3 class="text-base font-semibold mb-1">Việt Nam trong tôi</h3>
+              <p class="text-xs text-nau-nhat">
+                Con người, đời sống, du lịch trải nghiệm và ký ức cộng đồng.
+              </p>
+            </article>
+
+            <article
+              class="tl-node"
+              data-start="2027-10-01"
+              data-end="2027-12-31"
+            >
+              <span class="tl-badge"></span>
+              <div class="tl-marker-row">
+                <span class="tl-num">5</span>
+              </div>
+              <time class="block text-xs font-semibold text-nau-nhat mt-3 mb-1"
+                >Quý IV · 10–12/2027</time
+              >
+              <h3 class="text-base font-semibold mb-1">
+                Việt Nam vươn mình &amp; Chung kết
+              </h3>
+              <p class="text-xs text-nau-nhat">
+                Đổi mới sáng tạo, thương hiệu Việt và Chung kết năm.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. BẢN ĐỒ HƯƠNG SẮC VIỆT NAM (TRÁI: BẢN ĐỒ · PHẢI: BỘ LỌC & TÁC PHẨM) -->
+      <section id="section-12" class="section-pad bg-xanh-ban-dia text-white">
+        <div class="hs-container">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <!-- Cột trái: Bản đồ trực quan chuẩn địa giới & chủ quyền -->
+            <div class="lg:col-span-6 reveal">
+              <div
+                class="relative min-h-[470px] bg-xanh-sau border border-vang-di-san/35 p-6 grid place-items-center overflow-hidden"
+                role="img"
+                aria-label="Bản đồ Hương sắc Việt Nam đầy đủ đất liền cùng hai quần đảo Hoàng Sa và Trường Sa"
+              >
+                <div class="map-radar" aria-hidden="true"></div>
+                <svg
+                  class="relative z-10 w-[300px] max-w-full h-auto"
+                  viewBox="0 0 360 520"
+                  fill="none"
+                >
+                  <path
+                    d="M150 32L178 44L194 64L185 88L204 106L182 126L164 134L154 160L170 198L198 242L218 286L222 332L204 374L172 406L146 446L134 480L116 462L122 426L142 396L158 352L176 310L166 260L144 218L130 174L118 134L104 104L118 68L136 46L150 32Z"
+                    fill="#C6A15B"
+                    fill-opacity="0.22"
+                    stroke="#C6A15B"
+                    stroke-width="1.5"
+                  />
+                  <circle
+                    cx="156"
+                    cy="92"
+                    r="5"
+                    fill="#96282E"
+                    stroke="#F6F0E5"
+                    stroke-width="1.5"
+                  />
+                  <circle
+                    cx="192"
+                    cy="248"
+                    r="5"
+                    fill="#96282E"
+                    stroke="#F6F0E5"
+                    stroke-width="1.5"
+                  />
+                  <circle
+                    cx="152"
+                    cy="408"
+                    r="5"
+                    fill="#96282E"
+                    stroke="#F6F0E5"
+                    stroke-width="1.5"
+                  />
+
+                  <g>
+                    <circle cx="268" cy="222" r="2.2" fill="#C6A15B" />
+                    <circle cx="277" cy="228" r="1.8" fill="#C6A15B" />
+                    <circle cx="264" cy="233" r="1.8" fill="#C6A15B" />
+                    <text
+                      x="240"
+                      y="210"
+                      fill="#F6F0E5"
+                      font-size="10"
+                      font-family="Be Vietnam Pro"
+                    >
+                      QĐ. Hoàng Sa
+                    </text>
+                  </g>
+                  <g>
+                    <circle cx="288" cy="368" r="2.2" fill="#C6A15B" />
+                    <circle cx="298" cy="376" r="1.8" fill="#C6A15B" />
+                    <circle cx="282" cy="382" r="1.8" fill="#C6A15B" />
+                    <text
+                      x="256"
+                      y="356"
+                      fill="#F6F0E5"
+                      font-size="10"
+                      font-family="Be Vietnam Pro"
+                    >
+                      QĐ. Trường Sa
+                    </text>
+                  </g>
+                </svg>
+
+                <div
+                  class="absolute inset-x-5 bottom-4 flex flex-wrap justify-between gap-2 text-xs text-white/80 z-10"
+                >
+                  <span>Chuẩn địa giới &amp; chủ quyền Việt Nam</span>
+                  <span class="text-vang-di-san font-medium"
+                    >Mở rộng đầy đủ: Quý II–III/2027</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Cột phải: Bộ lọc địa phương + Danh sách tác phẩm mẫu -->
+            <div class="lg:col-span-6 reveal">
+              <span
+                class="inline-block text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full border border-vang-di-san/60 text-vang-di-san mb-4"
+              >
+                Sẵn sàng mở rộng đầy đủ vào Quý II–III/2027
+              </span>
+              <p class="eyebrow text-vang-di-san">
+                12 / Bản đồ Hương sắc Việt Nam
+              </p>
+              <h2 class="section-h2 text-white">
+                Khám phá Việt Nam từ
+                <em class="text-vang-di-san italic font-medium"
+                  >3.321 xã, phường.</em
+                >
+              </h2>
+              <p class="text-white/85 mb-6">
+                Bản đồ tập hợp hình ảnh và video đã xác thực gắn với từng địa
+                phương trên cả nước, hỗ trợ lọc sâu tới cấp
+                <strong>Tỉnh/Thành phố</strong> và <strong>Xã/Phường</strong>.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                <label class="block">
+                  <span
+                    class="block text-[11px] uppercase tracking-wider text-white/70 mb-1.5"
+                  >
+                    Tỉnh / Thành phố
+                  </span>
+                  <select
+                    id="map-province-select"
+                    class="w-full min-h-[42px] px-3 py-2 bg-white/10 border border-white/25 text-white rounded text-sm"
+                  >
+                    <option value="all" class="text-nau-than">
+                      Tất cả địa phương (Xem trước)
+                    </option>
+                    <option value="laocai" class="text-nau-than">
+                      Lào Cai
+                    </option>
+                    <option value="quangnam" class="text-nau-than">
+                      Quảng Nam
+                    </option>
+                    <option value="hue" class="text-nau-than">
+                      Thừa Thiên Huế
+                    </option>
+                  </select>
+                </label>
+                <label class="block">
+                  <span
+                    class="block text-[11px] uppercase tracking-wider text-white/70 mb-1.5"
+                  >
+                    Xã / Phường (Định hướng 3.321 đơn vị)
+                  </span>
+                  <select
+                    class="w-full min-h-[42px] px-3 py-2 bg-white/10 border border-white/25 text-white/75 rounded text-sm"
+                    disabled
+                  >
+                    <option>Đồng bộ dữ liệu Q2–Q3/2027</option>
+                  </select>
+                </label>
+              </div>
+
+              <div id="map-locality-list" class="space-y-2.5 mb-6">
+                <div class="map-entry" data-province="laocai">
+                  <strong>Lào Cai · Xã Tả Van</strong>
+                  <span>HSVN27-Q1-A-0001 · Nếp núi đón xuân về</span>
+                </div>
+                <div class="map-entry" data-province="quangnam">
+                  <strong>Quảng Nam · Phường Minh An</strong>
+                  <span>HSVN27-Q1-V-0003 · Ánh đèn lồng bên sông Hoài</span>
+                </div>
+                <div class="map-entry" data-province="hue">
+                  <strong>Huế · Phường Phú Hội</strong>
+                  <span>HSVN27-Q1-V-0011 · Hương vị quê nhà ngày Tết</span>
+                </div>
+              </div>
+
+              <a href="/cuoc-thi" class="btn-gold">
+                Xem kho tác phẩm địa phương ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. CẤT CÁNH THƯƠNG HIỆU -->
+      <section id="section-13" class="section-pad bg-kem-tram">
+        <div class="hs-container">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-5 relative reveal">
+              <img
+                src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=1000&q=85"
+                alt="Doanh nghiệp và nghệ nhân Việt Nam trao đổi phát triển thương hiệu"
+                loading="lazy"
+                class="w-full aspect-[4/5] object-cover rounded"
+              />
+              <div
+                class="absolute inset-x-4 bottom-4 p-3.5 bg-xanh-ban-dia/95 text-white text-xs border-l-4 border-vang-di-san"
+              >
+                Chương trình đào tạo &amp; coaching đồng hành · Tách biệt luồng
+                dự thi
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 reveal">
+              <p class="eyebrow">Cất Cánh Thương Hiệu</p>
+              <h2 class="section-h2">
+                Từ giá trị bản địa đến sức mạnh
+                <em class="text-do-son italic font-medium"
+                  >thương hiệu Việt.</em
+                >
+              </h2>
+              <p class="text-nau-nhat mb-6">
+                Đồng hành xuyên suốt 4 quý cùng Hương sắc Việt Nam 2027,
+                <strong>Cất Cánh Thương Hiệu</strong> hỗ trợ doanh nghiệp, hợp
+                tác xã và nghệ nhân nâng cao năng lực kể chuyện thương hiệu,
+                truyền thông và chuyển đổi số — tách biệt hoàn toàn với luồng
+                nộp bài dự thi.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7">
+                <div class="p-4 bg-white border border-nau-than/15">
+                  <span
+                    class="text-[11px] font-bold uppercase tracking-wider text-do-son"
+                    >Quý I</span
+                  >
+                  <h3 class="text-base font-semibold my-1">Sản phẩm Tết</h3>
+                  <p class="text-xs text-nau-nhat">
+                    Câu chuyện thương hiệu mùa xuân &amp; quà tặng Việt.
+                  </p>
+                </div>
+                <div class="p-4 bg-white border border-nau-than/15">
+                  <span
+                    class="text-[11px] font-bold uppercase tracking-wider text-do-son"
+                    >Quý II</span
+                  >
+                  <h3 class="text-base font-semibold my-1">
+                    Làng nghề &amp; OCOP
+                  </h3>
+                  <p class="text-xs text-nau-nhat">
+                    Chuẩn hóa tư liệu vùng nguyên liệu &amp; sản vật bản địa.
+                  </p>
+                </div>
+                <div class="p-4 bg-white border border-nau-than/15">
+                  <span
+                    class="text-[11px] font-bold uppercase tracking-wider text-do-son"
+                    >Quý III</span
+                  >
+                  <h3 class="text-base font-semibold my-1">
+                    Câu chuyện người sáng lập
+                  </h3>
+                  <p class="text-xs text-nau-nhat">
+                    Chân dung nghệ nhân, người lao động &amp; cộng đồng.
+                  </p>
+                </div>
+                <div class="p-4 bg-white border border-nau-than/15">
+                  <span
+                    class="text-[11px] font-bold uppercase tracking-wider text-do-son"
+                    >Quý IV</span
+                  >
+                  <h3 class="text-base font-semibold my-1">Chuyển đổi số</h3>
+                  <p class="text-xs text-nau-nhat">
+                    Ứng dụng công nghệ và thương mại số phát triển bền vững.
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                class="btn-primary"
+                data-open-modal="brand-modal"
+              >
+                TÌM HIỂU CHƯƠNG TRÌNH ↗
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 14. BAN GIÁM KHẢO & ĐẠI SỨ (SWIPER NGANG + TỶ LỆ 3:4) -->
+      <section id="section-14" class="section-pad bg-white">
+        <div class="hs-container">
+          <div
+            class="flex flex-wrap justify-between items-end gap-4 mb-9 reveal"
+          >
+            <div>
+              <p class="eyebrow">Ban Giám khảo &amp; Đại sứ</p>
+              <h2 class="section-h2 mb-0">
+                Đồng hành chuyên môn &amp;
+                <em class="text-do-son italic font-medium"
+                  >lan tỏa giá trị Việt.</em
+                >
+              </h2>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xs text-nau-nhat hidden sm:inline">
+                Chỉ công bố chính thức khi có xác nhận
+              </span>
+              <button
+                type="button"
+                class="swiper-nav-btn jury-prev"
+                aria-label="Giám khảo trước"
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                class="swiper-nav-btn jury-next"
+                aria-label="Giám khảo tiếp theo"
+              >
+                →
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="swiper jury-swiper reveal"
+            aria-label="Thanh trượt Ban giám khảo và Đại sứ"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <article class="jury-card">
+                  <div class="jury-portrait">
+                    <img
+                      src="assets/jury/jury-1.jpg"
+                      alt="Chân dung tượng trưng Chuyên gia Nhiếp ảnh"
+                      loading="lazy"
+                    />
+                    <span class="jury-symbolic-tag">Minh họa tượng trưng</span>
+                  </div>
+                  <div class="p-4">
+                    <span
+                      class="text-[10px] font-bold tracking-widest uppercase text-do-son"
+                      >HỘI ĐỒNG GIÁM KHẢO</span
+                    >
+                    <h3 class="text-base font-semibold mt-1 mb-1">
+                      Chuyên gia Nhiếp ảnh (Chờ xác nhận)
+                    </h3>
+                    <p class="text-xs font-medium mb-1.5">
+                      Chuyên môn: Nhiếp ảnh nghệ thuật &amp; tư liệu
+                    </p>
+                    <p class="text-xs text-nau-nhat">
+                      Tiểu sử ngắn đang được Ban Tổ chức cập nhật chính thức.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="jury-card">
+                  <div class="jury-portrait">
+                    <img
+                      src="assets/jury/jury-2.jpg"
+                      alt="Chân dung tượng trưng Đạo diễn / Nhà làm phim"
+                      loading="lazy"
+                    />
+                    <span class="jury-symbolic-tag">Minh họa tượng trưng</span>
+                  </div>
+                  <div class="p-4">
+                    <span
+                      class="text-[10px] font-bold tracking-widest uppercase text-do-son"
+                      >HỘI ĐỒNG GIÁM KHẢO</span
+                    >
+                    <h3 class="text-base font-semibold mt-1 mb-1">
+                      Đạo diễn / Nhà làm phim (Chờ xác nhận)
+                    </h3>
+                    <p class="text-xs font-medium mb-1.5">
+                      Chuyên môn: Kể chuyện điện ảnh &amp; phim ngắn
+                    </p>
+                    <p class="text-xs text-nau-nhat">
+                      Tiểu sử ngắn đang được Ban Tổ chức cập nhật chính thức.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="jury-card">
+                  <div class="jury-portrait">
+                    <img
+                      src="assets/jury/jury-3.jpg"
+                      alt="Chân dung tượng trưng Chuyên gia Văn hóa &amp; Thương hiệu"
+                      loading="lazy"
+                    />
+                    <span class="jury-symbolic-tag">Minh họa tượng trưng</span>
+                  </div>
+                  <div class="p-4">
+                    <span
+                      class="text-[10px] font-bold tracking-widest uppercase text-do-son"
+                      >HỘI ĐỒNG GIÁM KHẢO</span
+                    >
+                    <h3 class="text-base font-semibold mt-1 mb-1">
+                      Chuyên gia Văn hóa &amp; Thương hiệu
+                    </h3>
+                    <p class="text-xs font-medium mb-1.5">
+                      Chuyên môn: Di sản &amp; Thương hiệu bản địa
+                    </p>
+                    <p class="text-xs text-nau-nhat">
+                      Tiểu sử ngắn đang được Ban Tổ chức cập nhật chính thức.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="jury-card">
+                  <div class="jury-portrait">
+                    <img
+                      src="assets/jury/jury-4.jpg"
+                      alt="Chân dung tượng trưng Đại sứ Lan tỏa"
+                      loading="lazy"
+                    />
+                    <span class="jury-symbolic-tag">Minh họa tượng trưng</span>
+                  </div>
+                  <div class="p-4">
+                    <span
+                      class="text-[10px] font-bold tracking-widest uppercase text-do-son"
+                      >ĐẠI SỨ ĐỒNG HÀNH</span
+                    >
+                    <h3 class="text-base font-semibold mt-1 mb-1">
+                      Đại sứ Lan tỏa (Chờ xác nhận)
+                    </h3>
+                    <p class="text-xs font-medium mb-1.5">
+                      Chuyên môn: Sáng tạo nội dung cộng đồng
+                    </p>
+                    <p class="text-xs text-nau-nhat">
+                      Tiểu sử ngắn đang được Ban Tổ chức cập nhật chính thức.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="jury-card">
+                  <div class="jury-portrait">
+                    <img
+                      src="assets/jury/jury-5.jpg"
+                      alt="Chân dung tượng trưng Cố vấn Nội dung Địa phương"
+                      loading="lazy"
+                    />
+                    <span class="jury-symbolic-tag">Minh họa tượng trưng</span>
+                  </div>
+                  <div class="p-4">
+                    <span
+                      class="text-[10px] font-bold tracking-widest uppercase text-do-son"
+                      >HỘI ĐỒNG CHUYÊN MÔN</span
+                    >
+                    <h3 class="text-base font-semibold mt-1 mb-1">
+                      Cố vấn Nội dung Địa phương
+                    </h3>
+                    <p class="text-xs font-medium mb-1.5">
+                      Chuyên môn: Văn hóa vùng miền &amp; OCOP
+                    </p>
+                    <p class="text-xs text-nau-nhat">
+                      Tiểu sử ngắn đang được Ban Tổ chức cập nhật chính thức.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="swiper-pagination jury-pagination mt-6"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15. TIN TỨC VÀ SỰ KIỆN -->
+      <section id="section-15" class="section-pad bg-kem-giay-do">
+        <div class="hs-container">
+          <div
+            class="flex flex-wrap justify-between items-end gap-4 mb-9 reveal"
+          >
+            <div>
+              <p class="eyebrow">Tin tức &amp; Sự kiện</p>
+              <h2 class="section-h2 mb-0">
+                Nhịp đập mới từ
+                <em class="text-do-son italic font-medium"
+                  >Hương sắc Việt Nam.</em
+                >
+              </h2>
+            </div>
+            <a href="/tin-tuc" class="btn-outline btn-sm"
+              >Xem tất cả tin tức →</a
             >
           </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 reveal"
+          >
+            <article
+              class="bg-white border border-nau-than/15 p-4 flex flex-col"
+            >
+              <div class="aspect-[16/10] overflow-hidden mb-3.5">
+                <img
+                  src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=78"
+                  alt="Tin phát động cuộc thi Hương sắc Việt Nam 2027"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="flex justify-between text-[11px] mb-2">
+                <span class="font-bold uppercase tracking-wider text-do-son"
+                  >Tin cuộc thi</span
+                >
+                <time class="text-nau-nhat">12/2026</time>
+              </div>
+              <h3 class="text-base font-semibold mb-3 flex-1">
+                Công bố lộ trình 4 Quý &amp; Thể lệ chính thức Hương sắc Việt
+                Nam 2027
+              </h3>
+              <a
+                href="#section-11"
+                class="text-xs font-semibold text-do-son no-underline"
+                >Đọc thêm →</a
+              >
+            </article>
+
+            <article
+              class="bg-white border border-nau-than/15 p-4 flex flex-col"
+            >
+              <div class="aspect-[16/10] overflow-hidden mb-3.5">
+                <img
+                  src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=800&q=78"
+                  alt="Cẩm nang sáng tạo ảnh và video 9:16"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="flex justify-between text-[11px] mb-2">
+                <span class="font-bold uppercase tracking-wider text-do-son"
+                  >Cẩm nang sáng tạo</span
+                >
+                <time class="text-nau-nhat">01/2027</time>
+              </div>
+              <h3 class="text-base font-semibold mb-3 flex-1">
+                Bí quyết quay video dọc 9:16 và chụp bộ ảnh kể chuyện sắc xuân
+                quê hương
+              </h3>
+              <a
+                href="#section-06"
+                class="text-xs font-semibold text-do-son no-underline"
+                >Đọc thêm →</a
+              >
+            </article>
+
+            <article
+              class="bg-white border border-nau-than/15 p-4 flex flex-col"
+            >
+              <div class="aspect-[16/10] overflow-hidden mb-3.5">
+                <img
+                  src="https://images.unsplash.com/photo-1557750255-c76072a7aad1?auto=format&fit=crop&w=800&q=78"
+                  alt="Gương mặt thí sinh Hương sắc Việt Nam"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="flex justify-between text-[11px] mb-2">
+                <span class="font-bold uppercase tracking-wider text-do-son"
+                  >Gương mặt thí sinh</span
+                >
+                <time class="text-nau-nhat">02/2027</time>
+              </div>
+              <h3 class="text-base font-semibold mb-3 flex-1">
+                Những nhà sáng tạo trẻ đầu tiên mang câu chuyện bản địa lên
+                Nocal
+              </h3>
+              <a
+                href="#section-08"
+                class="text-xs font-semibold text-do-son no-underline"
+                >Đọc thêm →</a
+              >
+            </article>
+
+            <article
+              class="bg-white border border-nau-than/15 p-4 flex flex-col"
+            >
+              <div class="aspect-[16/10] overflow-hidden mb-3.5">
+                <img
+                  src="https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=800&q=78"
+                  alt="Câu chuyện thương hiệu Việt"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="flex justify-between text-[11px] mb-2">
+                <span class="font-bold uppercase tracking-wider text-do-son"
+                  >Câu chuyện thương hiệu Việt</span
+                >
+                <time class="text-nau-nhat">03/2027</time>
+              </div>
+              <h3 class="text-base font-semibold mb-3 flex-1">
+                Workshop Cất Cánh Thương Hiệu: Đưa câu chuyện làng nghề ra cộng
+                đồng số
+              </h3>
+              <a
+                href="#section-13"
+                class="text-xs font-semibold text-do-son no-underline"
+                >Đọc thêm →</a
+              >
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="updates section container">
-        <div class="heading-row reveal">
-          <div>
-            <p class="eyebrow">Tin tức &amp; sự kiện</p>
-            <h2>Câu chuyện mới từ<br /><em>Hương sắc Việt Nam.</em></h2>
+      <!-- 16. ĐƠN VỊ TỔ CHỨC VÀ ĐỐI TÁC (PHÂN TẦNG CĂN GIỮA CHUẨN THANHAM.VN) -->
+      <section id="section-16" class="section-pad bg-kem-giay-do relative overflow-hidden">
+        <div class="hs-container reveal">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <p class="eyebrow">Đơn vị tổ chức &amp; Đối tác</p>
+            <h2 class="section-h2">
+              Đồng hành lan tỏa
+              <em class="text-do-son italic font-medium">giá trị Việt.</em>
+            </h2>
+            <p class="text-sm sm:text-base text-nau-nhat mb-3">
+              Hương sắc Việt Nam 2027 xin gửi lời cảm ơn trân trọng đến đơn vị
+              tổ chức, các đơn vị phối hợp, đối tác đồng hành và truyền thông
+              cùng chung tay lan tỏa vẻ đẹp Việt Nam!
+            </p>
+            <span class="inline-block text-[11px] font-medium px-3 py-1 rounded-full bg-white/80 border border-vang-di-san/60 text-nau-nhat">
+              Logo đối tác bên dưới là minh họa bố cục (dự kiến / chờ xác nhận chính thức)
+            </span>
           </div>
-          <a href="#top" class="text-link">Xem tất cả <span>→</span></a>
-        </div>
-        <div class="news-grid reveal">
-          <article>
-            <div class="news-image n1"></div>
-            <p>THÔNG BÁO · ĐANG CẬP NHẬT</p>
-            <h3>Thông tin phát động cuộc thi sẽ được công bố tại đây</h3>
-            <a href="#top">Đọc thêm →</a>
-          </article>
-          <article>
-            <div class="news-image n2"></div>
-            <p>CẨM NANG · ĐANG CẬP NHẬT</p>
-            <h3>Gợi ý kể câu chuyện về quê hương bằng hình ảnh</h3>
-            <a href="#top">Đọc thêm →</a>
-          </article>
-          <article>
-            <div class="news-image n3"></div>
-            <p>CỘNG ĐỒNG · ĐANG CẬP NHẬT</p>
-            <h3>Cùng chuẩn bị cho hành trình lan tỏa giá trị Việt</h3>
-            <a href="#top">Đọc thêm →</a>
-          </article>
-        </div>
-      </section>
 
-      <section class="partners section">
-        <div class="container reveal">
-          <p class="eyebrow center-text">Đồng hành lan tỏa giá trị Việt Nam</p>
-          <h2 class="center-text">Đơn vị tổ chức &amp; <em>đối tác</em></h2>
-          <div class="partner-empty">
-            <span>Logo đơn vị tổ chức</span><span>Đối tác phối hợp</span
-            ><span>Nhà tài trợ</span><span>Đối tác truyền thông</span>
+          <div class="partner-hierarchy">
+            <!-- Tầng 1: Đơn vị tổ chức -->
+            <div class="partner-tier">
+              <h3 class="partner-tier-title">ĐƠN VỊ TỔ CHỨC</h3>
+              <div class="partner-tier-logos is-primary">
+                <div class="partner-logo-item is-featured">
+                  <img
+                    src="nocal.png"
+                    alt="Logo Công ty Cổ phần Khoa học Công nghệ Nocal"
+                    class="w-16 h-16 object-contain rounded"
+                  />
+                  <span class="partner-caption">
+                    CÔNG TY CỔ PHẦN KHOA HỌC CÔNG NGHỆ NOCAL
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tầng 2: Đơn vị phối hợp -->
+            <div class="partner-tier">
+              <h3 class="partner-tier-title">ĐƠN VỊ PHỐI HỢP</h3>
+              <div class="partner-tier-logos" aria-label="Đơn vị phối hợp minh họa">
+                <div class="partner-logo-item">
+                  <svg class="partner-emblem" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+                    <circle cx="28" cy="28" r="26" fill="#1E3A8A" />
+                    <circle cx="28" cy="28" r="14" stroke="#F8FAFC" stroke-width="2.2" />
+                    <circle cx="28" cy="28" r="5.5" fill="#FACC15" />
+                  </svg>
+                  <span class="partner-wordmark" style="color: #1E3A8A">VAPA</span>
+                  <span class="partner-caption">Hội Nghệ sĩ Nhiếp ảnh Việt Nam</span>
+                </div>
+
+                <div class="partner-logo-item">
+                  <svg class="partner-emblem" viewBox="0 0 56 56" fill="none" aria-hidden="true">
+                    <circle cx="28" cy="28" r="26" fill="#B91C1C" />
+                    <path d="M16 37L28 17L40 37H16Z" stroke="#FFFFFF" stroke-width="2.4" />
+                    <circle cx="28" cy="30" r="3" fill="#FDE047" />
+                  </svg>
+                  <span class="partner-wordmark" style="color: #B91C1C">NSSC</span>
+                  <span class="partner-caption">Trung tâm Hỗ trợ Khởi nghiệp Quốc gia</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tầng 3: Đơn vị đồng hành -->
+            <div class="partner-tier">
+              <h3 class="partner-tier-title">ĐƠN VỊ ĐỒNG HÀNH</h3>
+              <div class="partner-tier-logos" aria-label="Đơn vị đồng hành minh họa">
+                <div class="partner-logo-item">
+                  <svg class="partner-emblem is-sm" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <circle cx="24" cy="24" r="22" fill="#003B5C" />
+                    <path
+                      d="M12 28C17 21 24 15 36 18C29 22 25 27 23 32C19 29 15 28 12 28Z"
+                      fill="#D4AF37"
+                    />
+                  </svg>
+                  <span class="partner-wordmark" style="color: #003B5C">Vietnam Airlines</span>
+                </div>
+
+                <div class="partner-logo-item">
+                  <svg class="partner-emblem is-sm" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <rect width="48" height="48" rx="10" fill="#EE0033" />
+                    <path
+                      d="M13 17L24 33L35 17"
+                      stroke="#FFFFFF"
+                      stroke-width="3.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span class="partner-wordmark" style="color: #EE0033">viettel</span>
+                </div>
+
+                <div class="partner-logo-item">
+                  <svg class="partner-emblem is-sm" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <circle cx="24" cy="24" r="22" fill="#1C1917" />
+                    <circle cx="24" cy="24" r="12" stroke="#C6A15B" stroke-width="2" />
+                    <path d="M18 24H30M24 18V30" stroke="#C6A15B" stroke-width="2" />
+                  </svg>
+                  <span class="partner-wordmark" style="color: #1C1917">Trung Nguyên Legend</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tầng 4: Nhà tài trợ & Đối tác truyền thông -->
+            <div class="partner-tier">
+              <h3 class="partner-tier-title">NHÀ TÀI TRỢ &amp; ĐỐI TÁC TRUYỀN THÔNG</h3>
+              <div class="partner-tier-logos" aria-label="Nhà tài trợ và đối tác truyền thông minh họa">
+                <div class="partner-logo-item is-inline">
+                  <svg class="partner-emblem is-sm" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <rect x="6" y="15" width="10" height="18" rx="2.5" fill="#005BAC" />
+                    <rect x="19" y="15" width="10" height="18" rx="2.5" fill="#ED1C24" />
+                    <rect x="32" y="15" width="10" height="18" rx="2.5" fill="#00A651" />
+                  </svg>
+                  <span class="partner-wordmark" style="color: #005BAC">VTV</span>
+                </div>
+
+                <div class="partner-logo-item is-inline">
+                  <svg class="partner-emblem is-sm" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <rect width="48" height="48" rx="10" fill="#D91E2A" />
+                    <path d="M14 17H34M24 17V33" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" />
+                  </svg>
+                  <span class="partner-wordmark" style="color: #D91E2A">TUỔI TRẺ</span>
+                </div>
+
+                <div class="partner-logo-item is-inline">
+                  <svg class="partner-emblem is-sm" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <rect width="48" height="48" rx="10" fill="#9F224E" />
+                    <path
+                      d="M15 16L24 32L33 16"
+                      stroke="#FFFFFF"
+                      stroke-width="3.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span class="partner-wordmark" style="color: #9F224E">VnExpress</span>
+                </div>
+
+                <div class="partner-logo-item is-inline">
+                  <svg class="partner-emblem is-sm" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                    <rect width="48" height="48" rx="10" fill="#006837" />
+                    <rect x="14" y="14" width="20" height="5" fill="#FFFFFF" />
+                    <rect x="14" y="21.5" width="13" height="5" fill="#E60012" />
+                    <rect x="14" y="29" width="7" height="5" fill="#FFFFFF" />
+                  </svg>
+                  <span class="partner-wordmark" style="color: #006837">FUJIFILM</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <p class="partner-note">
-            Danh sách đối tác sẽ được cập nhật sau khi có xác nhận chính thức.
-          </p>
         </div>
       </section>
     </main>
-    <footer>
-      <div class="container footer-grid">
-        <div>
-          <a class="brand footer-brand" href="#top"
-            ><span class="brand-mark">HS</span
-            ><span>Hương sắc<br /><b>Việt Nam</b></span></a
+
+    <!-- 17. FOOTER (NỀN ĐỎ TRẦM #6F1B20 · 4 CỘT DESKTOP) -->
+    <footer id="section-17" class="bg-do-tram text-white pt-16 pb-8">
+      <div class="hs-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9">
+          <div>
+            <a
+              class="flex items-center gap-2.5 text-white no-underline mb-4"
+              href="#section-02"
+            >
+              <span
+                class="w-10 h-10 text-vang-di-san grid place-items-center"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 44 44" fill="none" class="w-10 h-10">
+                  <circle
+                    cx="22"
+                    cy="22"
+                    r="20.5"
+                    stroke="currentColor"
+                    stroke-width="1"
+                  />
+                  <path
+                    d="M22 10C18.5 15.2 18.5 22.8 22 28C25.5 22.8 25.5 15.2 22 10Z"
+                    stroke="currentColor"
+                    stroke-width="1.1"
+                  />
+                  <path
+                    d="M16 32.5H28"
+                    stroke="currentColor"
+                    stroke-width="1"
+                  />
+                </svg>
+              </span>
+              <span class="flex flex-col leading-tight">
+                <small class="text-[10px] tracking-[0.16em] opacity-80"
+                  >2027</small
+                >
+                <span class="font-serif text-[15px]"
+                  >Hương sắc <b>Việt Nam</b></span
+                >
+              </span>
+            </a>
+            <p class="font-serif italic text-[#F6E7C7] text-base mb-2">
+              “Mỗi góc nhìn – Một câu chuyện Việt Nam”
+            </p>
+            <p class="text-xs text-white/80">
+              The Colors of Vietnam · Cuộc thi sáng tạo hình ảnh và video toàn
+              quốc.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="footer-heading">Đơn vị tổ chức &amp; Liên hệ</h3>
+            <p class="text-sm font-semibold mb-2">
+              Công ty Cổ phần Khoa học Công nghệ Nocal
+            </p>
+            <p class="footer-item">
+              <strong>Hotline:</strong> Đang cập nhật chính thức
+            </p>
+            <p class="footer-item">
+              <strong>Email:</strong> Đang cập nhật chính thức
+            </p>
+            <p class="footer-item">
+              <strong>Địa chỉ:</strong> Công ty CP KHCN Nocal (đang cập nhật)
+            </p>
+          </div>
+
+          <div>
+            <h3 class="footer-heading">Liên kết nhanh</h3>
+            <a href="/cuoc-thi" class="footer-link"
+              >Cổng cuộc thi (/cuoc-thi)</a
+            >
+            <a
+              href="https://nocal.vn"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-link"
+            >
+              Nocal Social ↗
+            </a>
+            <button
+              type="button"
+              class="footer-link text-left"
+              data-open-modal="rules-modal"
+            >
+              Thể lệ cuộc thi
+            </button>
+            <button
+              type="button"
+              class="footer-link text-left"
+              data-open-modal="faq-modal"
+            >
+              Câu hỏi thường gặp (FAQ)
+            </button>
+          </div>
+
+          <div>
+            <h3 class="footer-heading">Pháp lý &amp; Bản quyền</h3>
+            <button
+              type="button"
+              class="footer-link text-left"
+              data-open-modal="rules-modal"
+            >
+              Điều khoản tham gia
+            </button>
+            <button
+              type="button"
+              class="footer-link text-left"
+              data-open-modal="rules-modal"
+            >
+              Chính sách bảo mật
+            </button>
+            <button
+              type="button"
+              class="footer-link text-left"
+              data-open-modal="rules-modal"
+            >
+              Quy định bản quyền tác phẩm
+            </button>
+            <a href="#section-13" class="footer-link">Cất Cánh Thương Hiệu ↗</a>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-white/20 mt-10 pt-5 flex flex-wrap justify-between gap-3 text-xs text-white/75"
+        >
+          <span
+            >© 2027 Hương sắc Việt Nam — Công ty Cổ phần Khoa học Công nghệ
+            Nocal.</span
           >
-          <p>Mỗi góc nhìn – Một câu chuyện Việt Nam.</p>
+          <span>Mỗi góc nhìn – Một câu chuyện Việt Nam.</span>
         </div>
-        <div>
-          <h3>Khám phá</h3>
-          <a href="#story">Câu chuyện</a><a href="#categories">Cuộc thi</a
-          ><a href="#themes">Chủ đề dự thi</a><a href="#journey">Hành trình</a>
-        </div>
-        <div>
-          <h3>Thông tin</h3>
-          <a href="#join">Hướng dẫn tham gia</a><a href="#top">Thể lệ</a
-          ><a href="#top">Câu hỏi thường gặp</a><a href="#top">Nocal</a>
-        </div>
-        <div>
-          <h3>Liên hệ</h3>
-          <p>
-            Thông tin hotline, email và địa chỉ đang được Ban Tổ chức cập nhật.
-          </p>
-          <a href="#top">Cất Cánh Thương Hiệu ↗</a>
-        </div>
-      </div>
-      <div class="container foot-bottom">
-        <span>© 2027 Hương sắc Việt Nam</span
-        ><span>Điều khoản · Chính sách bảo mật · Bản quyền</span>
       </div>
     </footer>
+
+    <!-- MODALS HỖ TRỢ -->
+    <!-- Modal xem & copy nhanh mẫu bài dự thi (Section 10) -->
+    <div
+      id="template-modal"
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="template-modal-title"
+      hidden
+    >
+      <div class="modal-card">
+        <button
+          class="modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Đóng cửa sổ"
+        >
+          ×
+        </button>
+        <p class="eyebrow">Mẫu bài dự thi chuẩn trên Nocal</p>
+        <h3 id="template-modal-title" class="text-xl font-semibold mb-3">
+          Sao chép mẫu bài &amp; Hashtag dự thi
+        </h3>
+
+        <div class="flex justify-between items-center gap-2 mb-2">
+          <span
+            class="text-xs font-semibold uppercase tracking-wider text-nau-nhat"
+            >Mẫu bài đăng công khai</span
+          >
+          <button
+            type="button"
+            class="copy-btn"
+            data-copy-target="submission-template"
+          >
+            Sao chép mẫu bài
+          </button>
+        </div>
+        <pre
+          id="submission-template"
+          class="p-4 bg-white border border-nau-than/15 text-xs sm:text-sm leading-relaxed whitespace-pre-wrap mb-4"
+        >
+BÀI DỰ THI HƯƠNG SẮC VIỆT NAM 2027
+Chủ đề quý: [Quý I - Sắc xuân Việt Nam]
+Tên tác phẩm: [Tên tác phẩm]
+Tác giả: [Họ và tên]
+Hạng mục: [Ảnh / Video]
+Nhóm nội dung: [Non nước / Bản sắc / Con người / Hương vị / Làng nghề / Thương hiệu Việt]
+Địa phương thực hiện: [Tỉnh/Thành phố]
+Câu chuyện về tác phẩm: [Chia sẻ cảm xúc và câu chuyện phía sau tác phẩm]
+
+#HuongSacVietNam #HuongSacVietNam2027 #Nocal #SacXuanVietNam</pre
+        >
+
+        <div class="flex justify-between items-center gap-2 mb-2">
+          <span
+            class="text-xs font-semibold uppercase tracking-wider text-nau-nhat"
+            >Bộ hashtag bắt buộc</span
+          >
+          <button
+            type="button"
+            class="copy-btn"
+            data-copy-target="hashtag-text"
+          >
+            Sao chép hashtag
+          </button>
+        </div>
+        <code
+          id="hashtag-text"
+          class="block p-3 bg-white border border-nau-than/15 text-do-son font-semibold text-xs sm:text-sm mb-3"
+        >
+          #HuongSacVietNam #HuongSacVietNam2027 #Nocal #SacXuanVietNam
+        </code>
+        <p class="text-xs text-nau-nhat">
+          Hashtag từng quý: <code>#SacXuanVietNam</code> (Q1) ·
+          <code>#TinhHoaDatViet</code> (Q2) · <code>#VietNamTrongToi</code> (Q3)
+          · <code>#VietNamVuonMinh</code> (Q4)
+        </p>
+      </div>
+    </div>
+
+    <!-- Modal Trailer (CC) -->
+    <div
+      id="trailer-modal"
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="trailer-modal-title"
+      hidden
+    >
+      <div class="modal-card">
+        <button
+          class="modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Đóng cửa sổ"
+        >
+          ×
+        </button>
+        <p class="eyebrow">Trailer &amp; Xem trước video</p>
+        <h3 id="trailer-modal-title" class="text-xl font-semibold mb-3">
+          Hương sắc Việt Nam 2027 — Trailer chính thức (60–90 giây)
+        </h3>
+        <div
+          class="aspect-video bg-xanh-ban-dia text-white border border-vang-di-san p-6 flex flex-col justify-between text-center"
+        >
+          <div class="flex justify-between items-center text-xs">
+            <span class="px-2 py-0.5 border border-white/30 rounded"
+              >Tắt tiếng mặc định</span
+            >
+            <button
+              type="button"
+              id="toggle-cc-btn"
+              aria-pressed="true"
+              class="px-2.5 py-1 rounded border border-vang-di-san text-vang-di-san bg-black/30 cursor-pointer"
+            >
+              CC Phụ đề: Bật
+            </button>
+          </div>
+          <p class="text-sm sm:text-base my-4">
+            Khung trình phát Trailer 60–90s sẵn sàng gắn nguồn video master từ
+            Media Team Nocal.
+          </p>
+          <div
+            id="trailer-cc-box"
+            class="px-3 py-2 bg-black/65 text-xs text-[#F6E7C7] rounded"
+          >
+            [Phụ đề CC]: “Mỗi góc nhìn – Một câu chuyện Việt Nam. Hãy ghi lại
+            điều bạn yêu trên Nocal.”
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Thể lệ & Quy chế -->
+    <div
+      id="rules-modal"
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="rules-modal-title"
+      hidden
+    >
+      <div class="modal-card">
+        <button
+          class="modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Đóng cửa sổ"
+        >
+          ×
+        </button>
+        <p class="eyebrow">Thông tin cuộc thi</p>
+        <h3 id="rules-modal-title" class="text-xl font-semibold mb-3">
+          Quy chế &amp; Tóm tắt Thể lệ 2027
+        </h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm">
+          <li>
+            <strong>Đối tượng:</strong> Công dân toàn quốc và người Việt ở nước
+            ngoài có tài khoản Nocal hợp lệ.
+          </li>
+          <li>
+            <strong>Hạng mục Ảnh:</strong> Ảnh đơn hoặc bộ 3–10 ảnh (JPG, JPEG,
+            PNG; khuyến nghị cạnh dài 2.000px).
+          </li>
+          <li>
+            <strong>Hạng mục Video:</strong> 30–180 giây (MP4, MOV; Full HD; ưu
+            tiên 9:16; tiếng Việt hoặc có phụ đề).
+          </li>
+          <li>
+            <strong>Bản quyền &amp; Chủ quyền:</strong> Tác phẩm chính chủ; dữ
+            liệu địa giới và chủ quyền chuẩn xác.
+          </li>
+          <li>
+            <strong>Giải thưởng:</strong> Tổng giá trị 70.000.000 VNĐ phân bổ
+            cho 4 quý và Chung kết năm.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modal FAQ -->
+    <div
+      id="faq-modal"
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="faq-modal-title"
+      hidden
+    >
+      <div class="modal-card">
+        <button
+          class="modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Đóng cửa sổ"
+        >
+          ×
+        </button>
+        <p class="eyebrow">Giải đáp thắc mắc</p>
+        <h3 id="faq-modal-title" class="text-xl font-semibold mb-3">
+          Câu hỏi thường gặp (FAQ)
+        </h3>
+        <ul class="list-disc pl-5 space-y-2.5 text-sm">
+          <li>
+            <strong
+              >Chưa có kinh nghiệm chuyên nghiệp có dự thi được không?</strong
+            >
+            Có, cuộc thi khuyến khích góc nhìn gần gũi từ điện thoại hoặc máy
+            ảnh.
+          </li>
+          <li>
+            <strong>Mã dự thi cấp như thế nào?</strong> Sau khi đăng Nocal kèm
+            hashtag chuẩn và gửi link về Cổng thi, BTC kiểm duyệt trong 72h và
+            cấp mã (VD: <code>HSVN27-Q1-A-0001</code>).
+          </li>
+          <li>
+            <strong>Cất Cánh Thương Hiệu có nộp bài thi tại đó không?</strong>
+            Không, luồng đăng ký đào tạo doanh nghiệp tách biệt hoàn toàn với
+            luồng dự thi.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modal Cất Cánh Thương Hiệu -->
+    <div
+      id="brand-modal"
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="brand-modal-title"
+      hidden
+    >
+      <div class="modal-card">
+        <button
+          class="modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Đóng cửa sổ"
+        >
+          ×
+        </button>
+        <p class="eyebrow">Chương trình đồng hành doanh nghiệp</p>
+        <h3 id="brand-modal-title" class="text-xl font-semibold mb-3">
+          Cất Cánh Thương Hiệu 2027
+        </h3>
+        <p class="text-sm mb-3">
+          Chương trình đào tạo &amp; coaching dành cho doanh nghiệp Việt Nam,
+          làng nghề và đơn vị OCOP xuyên suốt 4 quý (Sản phẩm Tết · Làng
+          nghề/OCOP · Người sáng lập · Chuyển đổi số).
+        </p>
+        <p class="text-xs text-nau-nhat">
+          Luồng đăng ký tham gia đào tạo được vận hành độc lập với cổng tiếp
+          nhận bài thi để đảm bảo minh bạch quy chế chấm giải.
+        </p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
